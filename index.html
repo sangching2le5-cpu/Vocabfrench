@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Français A1 – Từ vựng Le Nouveau Taxi ! 1 (Leçons 7–12)</title>
+<style>
+  :root{
+    --blue:#5b8def; --blue-dark:#2f5db8; --blue-light:#eaf2ff; --blue-mid:#dbe9ff;
+    --bg:#f5f9ff; --card:#ffffff; --text:#1f2a44; --muted:#6b7a99;
+    --ok:#1f8a5b; --ok-bg:#e6f7ef; --bad:#c0392b; --bad-bg:#fdecea;
+    --border:#d8e5f8; --warn:#b8860b; --warn-bg:#fff8e1;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.55; font-size:16px;
+    -webkit-text-size-adjust:100%;
+  }
+  header.topbar{
+    position:sticky; top:0; z-index:60;
+    background:linear-gradient(135deg,#eef5ff,#dbe9ff);
+    border-bottom:1px solid #cfe0f7;
+    padding:10px 14px 8px;
+    box-shadow:0 2px 8px rgba(47,93,184,.06);
+  }
+  .brand{font-weight:700;color:var(--blue-dark);font-size:1rem;margin-bottom:8px;letter-spacing:.2px}
+  .brand span{font-weight:500;color:var(--muted);font-size:.85rem;display:block}
+  nav{display:flex;flex-wrap:wrap;gap:6px}
+  nav button{
+    font:inherit;font-size:.9rem;font-weight:600;
+    background:#fff;color:var(--blue-dark);
+    border:1px solid var(--border); border-radius:999px;
+    padding:8px 14px; cursor:pointer; transition:.15s;
+    min-height:40px;
+  }
+  nav button:hover{background:var(--blue-light);border-color:#b9d2f5}
+  nav button:focus-visible{outline:3px solid #9dc0f5;outline-offset:2px}
+  nav button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+  main{max-width:1060px;margin:0 auto;padding:16px 14px 60px}
+  .view{display:none}
+  .view.active{display:block;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .card{
+    background:var(--card);border-radius:var(--radius);
+    box-shadow:0 2px 10px rgba(47,93,184,.07);
+    padding:16px;margin-bottom:14px;border:1px solid #eef4fd;
+  }
+  h1{font-size:1.35rem;margin:0 0 6px;color:var(--blue-dark)}
+  h2{font-size:1.15rem;margin:0 0 10px;color:var(--blue-dark)}
+  h3{font-size:1rem;margin:14px 0 8px;color:var(--blue-dark)}
+  p{margin:6px 0}
+  .muted{color:var(--muted);font-size:.9rem}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  label.field{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:600;color:var(--muted)}
+  select,input[type=text],input[type=search]{
+    font:inherit;font-size:.95rem;padding:9px 10px;border-radius:10px;
+    border:1px solid var(--border);background:#fff;color:var(--text);min-height:42px;
+  }
+  select:focus,input:focus{outline:3px solid #bcd6f8;outline-offset:1px;border-color:var(--blue)}
+  .btn{
+    font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;
+    border-radius:12px;padding:10px 16px;border:1px solid var(--border);
+    background:#fff;color:var(--blue-dark);transition:.15s;min-height:42px;
+  }
+  .btn:hover{background:var(--blue-light)}
+  .btn:focus-visible{outline:3px solid #9dc0f5;outline-offset:2px}
+  .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .btn.primary:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+  .btn.danger{background:#fff;color:var(--bad);border-color:#f3c9c4}
+  .btn.danger:hover{background:var(--bad-bg)}
+  .btn.small{font-size:.82rem;padding:7px 11px;min-height:36px;border-radius:10px}
+  .btn.ghost{background:transparent;border-color:transparent;color:var(--blue-dark);text-decoration:underline}
+  .btn[disabled]{opacity:.55;cursor:not-allowed}
+  .badge{
+    display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;
+    background:var(--blue-light);color:var(--blue-dark);margin-left:6px;vertical-align:middle;
+    border:1px solid #d5e5fb;
+  }
+  .badge.ok{background:var(--ok-bg);color:var(--ok);border-color:#c3ead8}
+  .badge.warn{background:var(--warn-bg);color:var(--warn);border-color:#f0e0b0}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .stat{background:var(--blue-light);border-radius:14px;padding:12px;border:1px solid #deeafb}
+  .stat .num{font-size:1.5rem;font-weight:800;color:var(--blue-dark);line-height:1.2}
+  .stat .lbl{font-size:.82rem;color:var(--muted);font-weight:600}
+  .bar{height:10px;border-radius:999px;background:#e6eefb;overflow:hidden;margin:6px 0}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#7aa8f0,#5b8def);border-radius:999px;transition:width .3s}
+  .lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+  .lesson-card{
+    background:#fff;border:1px solid #e6effb;border-radius:14px;padding:14px;
+    box-shadow:0 2px 8px rgba(47,93,184,.05);display:flex;flex-direction:column;gap:6px
+  }
+  .lesson-card .lt{font-weight:800;color:var(--blue-dark)}
+  .lesson-card .ls{font-size:.85rem;color:var(--muted)}
+  .vocab-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+  .vcard{background:#fff;border:1px solid #e9f1fc;border-radius:14px;padding:13px;box-shadow:0 1px 6px rgba(47,93,184,.05)}
+  .vcard .fr{font-size:1.08rem;font-weight:800;color:var(--blue-dark)}
+  .vcard .vi{font-weight:600;margin-top:2px}
+  .vcard .ipa{font-size:.85rem;color:#8a99b8;font-style:italic}
+  .vcard .cat{font-size:.75rem;color:var(--muted);margin-top:4px}
+  .vcard .actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .example{
+    margin-top:9px;padding:9px 11px;background:var(--blue-light);border-radius:10px;
+    font-size:.9rem;border-left:4px solid #a9c8f5
+  }
+  .example .fr-ex{font-weight:600}
+  .hidden{display:none !important}
+  .qmeta{font-size:.82rem;color:var(--muted);font-weight:700;letter-spacing:.3px;margin-bottom:8px}
+  .qprompt{font-size:1.12rem;font-weight:700;margin-bottom:12px;line-height:1.6}
+  .qprompt .blank{color:var(--blue);font-weight:900}
+  .options{display:flex;flex-direction:column;gap:9px}
+  .opt{
+    display:flex;align-items:center;gap:10px;text-align:left;
+    background:#fff;border:2px solid var(--border);border-radius:12px;
+    padding:12px 14px;cursor:pointer;font:inherit;font-size:1rem;color:var(--text);
+    transition:.13s;width:100%;min-height:52px
+  }
+  .opt:hover:not([disabled]){background:var(--blue-light);border-color:#b9d2f5}
+  .opt:focus-visible{outline:3px solid #9dc0f5;outline-offset:2px}
+  .opt .key{
+    flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:var(--blue-light);
+    color:var(--blue-dark);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem
+  }
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .key{background:#bfe8d5;color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .key{background:#f5c9c4;color:var(--bad)}
+  .opt[disabled]{cursor:default}
+  .feedback{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:.95rem}
+  .feedback.ok{background:var(--ok-bg);border:1px solid #bfe8d5}
+  .feedback.bad{background:var(--bad-bg);border:1px solid #f3c9c4}
+  .feedback .tag{font-weight:800;display:block;margin-bottom:4px}
+  .feedback.ok .tag{color:var(--ok)}
+  .feedback.bad .tag{color:var(--bad)}
+  .progressline{font-size:.85rem;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .wrongitem{background:#fff;border:1px solid #f0d9d6;border-radius:12px;padding:12px;margin-bottom:10px}
+  .wrongitem .qq{font-weight:700;margin-bottom:6px}
+  .wrongitem .ans{font-size:.9rem;margin:2px 0}
+  .wrongitem .ans.bad{color:var(--bad)}
+  .wrongitem .ans.ok{color:var(--ok)}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tabs button{
+    font:inherit;font-size:.88rem;font-weight:700;padding:8px 14px;border-radius:999px;
+    border:1px solid var(--border);background:#fff;color:var(--blue-dark);cursor:pointer;min-height:40px
+  }
+  .tabs button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .tabs button:focus-visible{outline:3px solid #9dc0f5;outline-offset:2px}
+  .empty{padding:18px;text-align:center;color:var(--muted);background:var(--blue-light);border-radius:12px}
+  .divider{height:1px;background:#e9f1fc;margin:14px 0}
+  .kv{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;padding:4px 0}
+  .kv span:last-child{font-weight:700;color:var(--blue-dark)}
+  .result-big{font-size:1.7rem;font-weight:900;color:var(--blue-dark)}
+  .pill{display:inline-block;font-size:.78rem;padding:3px 9px;border-radius:999px;background:var(--blue-light);color:var(--blue-dark);font-weight:700;margin-right:6px}
+  @media (max-width:560px){
+    body{font-size:15px}
+    nav button{font-size:.82rem;padding:7px 11px}
+    main{padding:12px 10px 60px}
+    .qprompt{font-size:1.03rem}
+    .opt{font-size:.95rem;padding:11px 12px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">🇫🇷 Français A1 – Le Nouveau Taxi ! 1
+    <span>Từ vựng Leçons 7–12 · Dành cho người Việt</span>
+  </div>
+  <nav id="mainnav" aria-label="Điều hướng chính">
+    <button data-view="home" class="active">Trang chủ</button>
+    <button data-view="lessons">Bài học từ vựng</button>
+    <button data-view="meaning">Bài tập chọn nghĩa</button>
+    <button data-view="context">Bài tập theo ngữ cảnh</button>
+    <button data-view="review">Ôn tập từ sai</button>
+    <button data-view="progress">Tiến độ học tập</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HOME ============ -->
+  <section id="view-home" class="view active">
+    <div class="card">
+      <h1>Học từ vựng tiếng Pháp A1</h1>
+      <p class="muted">Bộ từ vựng Leçons 7–12 của giáo trình <em>Le Nouveau Taxi ! 1</em>, có nghĩa tiếng Việt, ví dụ, bài tập chọn nghĩa và bài tập theo ngữ cảnh. Tiến độ được lưu tự động trên thiết bị của bạn.</p>
+    </div>
+    <div class="card">
+      <h2>Tổng quan</h2>
+      <div class="stats-grid" id="homeStats"></div>
+    </div>
+    <div class="card">
+      <h2>Bắt đầu nhanh</h2>
+      <div class="row">
+        <button class="btn primary" data-goto="lessons">📚 Học từ vựng</button>
+        <button class="btn" data-goto="meaning">🅰️ Bài tập chọn nghĩa</button>
+        <button class="btn" data-goto="context">✏️ Bài tập theo ngữ cảnh</button>
+        <button class="btn" data-goto="review">🔁 Ôn tập từ sai</button>
+        <button class="btn" data-goto="progress">📈 Tiến độ</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Sáu bài học</h2>
+      <div class="lesson-grid" id="homeLessons"></div>
+    </div>
+  </section>
+
+  <!-- ============ LESSONS ============ -->
+  <section id="view-lessons" class="view">
+    <div class="card">
+      <h1>Bài học từ vựng</h1>
+      <div class="row" style="margin-top:8px">
+        <label class="field">Bài học
+          <select id="vocabLesson">
+            <option value="all">Tất cả (Leçons 7–12)</option>
+          </select>
+        </label>
+        <label class="field">Trạng thái
+          <select id="vocabStatus">
+            <option value="all">Tất cả</option>
+            <option value="learned">Đã học</option>
+            <option value="review">Cần ôn lại</option>
+            <option value="new">Chưa học</option>
+          </select>
+        </label>
+        <label class="field" style="flex:1;min-width:220px">Tìm kiếm
+          <input type="search" id="vocabSearch" placeholder="Từ tiếng Pháp, nghĩa tiếng Việt, chủ đề…">
+        </label>
+      </div>
+      <p class="muted" id="vocabCount" style="margin-top:10px"></p>
+    </div>
+    <div id="vocabList" class="vocab-list"></div>
+  </section>
+
+  <!-- ============ MEANING QUIZ ============ -->
+  <section id="view-meaning" class="view">
+    <div class="card">
+      <h1>Bài tập chọn nghĩa tiếng Việt</h1>
+      <p class="muted">Chọn nghĩa tiếng Việt đúng của từ / cụm từ tiếng Pháp.</p>
+      <div class="row" style="margin-top:10px">
+        <label class="field">Phạm vi
+          <select id="mScope"></select>
+        </label>
+        <label class="field">Số câu
+          <select id="mCount">
+            <option value="10">10 câu</option>
+            <option value="20" selected>20 câu</option>
+            <option value="25">25 câu</option>
+            <option value="30">30 câu</option>
+            <option value="50">50 câu</option>
+          </select>
+        </label>
+        <label class="field">Chế độ
+          <select id="mMode">
+            <option value="practice">Luyện tập (xem đáp án ngay)</option>
+            <option value="test">Kiểm tra (chấm điểm cuối)</option>
+          </select>
+        </label>
+        <button class="btn primary" id="mStart" style="align-self:flex-end">Bắt đầu</button>
+      </div>
+    </div>
+    <div id="mQuiz"></div>
+  </section>
+
+  <!-- ============ CONTEXT QUIZ ============ -->
+  <section id="view-context" class="view">
+    <div class="card">
+      <h1>Bài tập theo ngữ cảnh</h1>
+      <p class="muted">Chọn từ / cụm từ tiếng Pháp đúng để điền vào chỗ trống trong câu.</p>
+      <div class="row" style="margin-top:10px">
+        <label class="field">Phạm vi
+          <select id="cScope"></select>
+        </label>
+        <label class="field">Số câu
+          <select id="cCount">
+            <option value="10">10 câu</option>
+            <option value="20" selected>20 câu</option>
+            <option value="25">25 câu</option>
+            <option value="30">30 câu</option>
+            <option value="50">50 câu</option>
+          </select>
+        </label>
+        <label class="field">Chế độ
+          <select id="cMode">
+            <option value="practice">Luyện tập (xem đáp án ngay)</option>
+            <option value="test">Kiểm tra (chấm điểm cuối)</option>
+          </select>
+        </label>
+        <button class="btn primary" id="cStart" style="align-self:flex-end">Bắt đầu</button>
+      </div>
+    </div>
+    <div id="cQuiz"></div>
+  </section>
+
+  <!-- ============ REVIEW ============ -->
+  <section id="view-review" class="view">
+    <div class="card">
+      <h1>Ôn tập &amp; từ sai</h1>
+      <div class="tabs" id="reviewTabs">
+        <button data-tab="learned" class="active">Từ đã học</button>
+        <button data-tab="need">Từ cần ôn</button>
+        <button data-tab="wrong">Câu trả lời sai</button>
+        <button data-tab="random">Ôn tập ngẫu nhiên</button>
+      </div>
+      <div id="reviewBody"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROGRESS ============ -->
+  <section id="view-progress" class="view">
+    <div class="card">
+      <h1>Tiến độ học tập</h1>
+      <div class="stats-grid" id="progressStats"></div>
+    </div>
+    <div class="card">
+      <h2>Tiến độ theo từng bài</h2>
+      <div id="unitProgress"></div>
+    </div>
+    <div class="card">
+      <h2>Lỗi gần đây</h2>
+      <div id="recentMistakes"></div>
+    </div>
+    <div class="card">
+      <h2>Quản lý dữ liệu</h2>
+      <p class="muted">Tiến độ được lưu trong <strong>localStorage</strong> của trình duyệt. Xoá tiến độ sẽ không thể khôi phục.</p>
+      <div class="row" style="margin-top:8px">
+        <label class="field">Chọn bài để xoá
+          <select id="resetUnit"></select>
+        </label>
+        <button class="btn danger" id="resetUnitBtn" style="align-self:flex-end">Xoá tiến độ bài này</button>
+        <button class="btn danger" id="resetAllBtn" style="align-self:flex-end">Xoá toàn bộ tiến độ</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+"use strict";
+
+/* ============================================================
+   1. DỮ LIỆU BÀI HỌC
+   ============================================================ */
+
+const LESSONS = [
+  {id:"l7",  num:7,  title:"Faire les courses", vi:"Đi mua sắm"},
+  {id:"l8",  num:8,  title:"L'art",             vi:"Nghệ thuật"},
+  {id:"l9",  num:9,  title:"L'appartement",     vi:"Căn hộ"},
+  {id:"l10", num:10, title:"Les directions",    vi:"Chỉ đường"},
+  {id:"l11", num:11, title:"Les voyages",       vi:"Du lịch"},
+  {id:"l12", num:12, title:"Marseille",         vi:"Marseille"}
+];
+
+/* Mỗi mục từ vựng:
+   [0] tiếng Pháp  [1] nghĩa tiếng Việt  [2] từ loại  [3] chủ đề
+   [4] phiên âm IPA  [5] câu ví dụ tiếng Pháp  [6] giải thích tiếng Việt */
+
+const RAW_VOCAB = {
+
+/* ---------------- LEÇON 7 ---------------- */
+l7:[
+["une robe","váy đầm","n.f","Quần áo & phụ kiện","/yn ʁɔb/","Elle porte une robe rouge.","Cô ấy mặc một chiếc váy màu đỏ."],
+["un pantalon","quần dài","n.m","Quần áo & phụ kiện","/œ̃ pɑ̃talɔ̃/","Ce pantalon est trop grand.","Chiếc quần này quá rộng."],
+["une chemise","áo sơ mi","n.f","Quần áo & phụ kiện","/yn ʃəmiz/","Il achète une chemise blanche.","Anh ấy mua một chiếc áo sơ mi trắng."],
+["une jupe","chân váy","n.f","Quần áo & phụ kiện","/yn ʒyp/","Cette jupe est en promotion.","Chiếc chân váy này đang giảm giá."],
+["un pull","áo len","n.m","Quần áo & phụ kiện","/œ̃ pyl/","Je mets un pull en hiver.","Tôi mặc áo len vào mùa đông."],
+["un manteau","áo khoác dài","n.m","Quần áo & phụ kiện","/œ̃ mɑ̃to/","Il fait froid, prends ton manteau.","Trời lạnh, hãy mang áo khoác dài của bạn."],
+["une veste","áo khoác ngắn","n.f","Quần áo & phụ kiện","/yn vɛst/","Cette veste est très jolie.","Chiếc áo khoác ngắn này rất xinh."],
+["des chaussures","giày","n.f.pl","Quần áo & phụ kiện","/de ʃosyʁ/","Ces chaussures coûtent 80 euros.","Đôi giày này giá 80 euro."],
+["des chaussettes","tất (vớ)","n.f.pl","Quần áo & phụ kiện","/de ʃosɛt/","J'achète des chaussettes noires.","Tôi mua mấy đôi tất màu đen."],
+["un chapeau","mũ","n.m","Quần áo & phụ kiện","/œ̃ ʃapo/","Elle porte un chapeau blanc.","Cô ấy đội một chiếc mũ trắng."],
+["une écharpe","khăn quàng cổ","n.f","Quần áo & phụ kiện","/yn eʃaʁp/","Je mets une écharpe quand il fait froid.","Tôi quàng khăn khi trời lạnh."],
+["un sac","túi xách","n.m","Quần áo & phụ kiện","/œ̃ sak/","Ce sac est très cher.","Chiếc túi này rất đắt."],
+["une ceinture","thắt lưng","n.f","Quần áo & phụ kiện","/yn sɛ̃tyʁ/","Il met une ceinture noire.","Anh ấy đeo một chiếc thắt lưng màu đen."],
+["noir / noire","màu đen","adj","Màu sắc","/nwaʁ/","une robe noire, un pantalon noir","một chiếc váy đen, một chiếc quần đen"],
+["blanc / blanche","màu trắng","adj","Màu sắc","/blɑ̃ / blɑ̃ʃ/","une chemise blanche, un pull blanc","một chiếc áo sơ mi trắng, một chiếc áo len trắng"],
+["rouge","màu đỏ","adj","Màu sắc","/ʁuʒ/","une jupe rouge, un sac rouge","một chiếc chân váy đỏ, một chiếc túi đỏ"],
+["bleu / bleue","màu xanh dương","adj","Màu sắc","/blø/","un manteau bleu, une veste bleue","một chiếc áo khoác dài màu xanh dương, một chiếc áo khoác ngắn màu xanh dương"],
+["vert / verte","màu xanh lá","adj","Màu sắc","/vɛʁ / vɛʁt/","un chapeau vert, une écharpe verte","một chiếc mũ xanh lá, một chiếc khăn xanh lá"],
+["jaune","màu vàng","adj","Màu sắc","/ʒon/","un pull jaune, des chaussettes jaunes","một chiếc áo len vàng, mấy đôi tất vàng"],
+["rose","màu hồng","adj","Màu sắc","/ʁoz/","une robe rose, un sac rose","một chiếc váy hồng, một chiếc túi hồng"],
+["une taille","cỡ (quần áo)","n.f","Mua sắm","/yn taj/","Quelle taille faites-vous ?","Bạn mặc cỡ nào?"],
+["le prix","giá","n.m","Mua sắm","/lə pʁi/","Quel est le prix de cette robe ?","Giá của chiếc váy này là bao nhiêu?"],
+["cher / chère","đắt","adj","Mua sắm","/ʃɛʁ/","Ce manteau est trop cher.","Chiếc áo khoác dài này quá đắt."],
+["bon marché","rẻ","adj (không đổi)","Mua sắm","/bɔ̃ maʁʃe/","Ces chaussures sont bon marché.","Đôi giày này rẻ."],
+["essayer","thử","v","Mua sắm","/esɛje/","Je peux essayer ce pull ?","Tôi có thể thử chiếc áo len này không?"],
+["acheter","mua","v","Mua sắm","/aʃte/","Elle achète une jupe rouge.","Cô ấy mua một chiếc chân váy màu đỏ."],
+["vendre","bán","v","Mua sắm","/vɑ̃dʁ/","Le magasin vend des chapeaux.","Cửa hàng bán mũ."],
+["prendre","lấy, chọn mua","v","Mua sắm","/pʁɑ̃dʁ/","Je prends cette chemise.","Tôi lấy chiếc áo sơ mi này."],
+["combien","bao nhiêu","adv","Mua sắm","/kɔ̃bjɛ̃/","Combien coûte ce sac ?","Chiếc túi này giá bao nhiêu?"],
+["en promotion","đang giảm giá","expr","Mua sắm","/ɑ̃ pʁɔmosjɔ̃/","Cette veste est en promotion.","Chiếc áo khoác ngắn này đang giảm giá."],
+["la caisse","quầy thu ngân","n.f","Mua sắm","/la kɛs/","Passez à la caisse, s'il vous plaît.","Xin vui lòng đến quầy thu ngân."],
+["un vendeur / une vendeuse","người bán hàng","n","Mua sắm","/œ̃ vɑ̃dœʁ/","La vendeuse est très gentille.","Cô bán hàng rất tốt bụng."],
+["soixante-dix","bảy mươi (70)","num","Số đếm","/swasɑ̃t dis/","Ce manteau coûte soixante-dix euros.","Chiếc áo khoác này giá bảy mươi euro."],
+["quatre-vingts","tám mươi (80)","num","Số đếm","/katʁə vɛ̃/","Ces chaussures coûtent quatre-vingts euros.","Đôi giày này giá tám mươi euro."],
+["quatre-vingt-dix","chín mươi (90)","num","Số đếm","/katʁə vɛ̃ dis/","Il fait quatre-vingt-dix kilos.","Anh ấy nặng chín mươi ký."],
+["cent","một trăm (100)","num","Số đếm","/sɑ̃/","Cette robe coûte cent euros.","Chiếc váy này giá một trăm euro."],
+["mille","một nghìn (1000)","num","Số đếm","/mil/","Ce sac coûte mille euros.","Chiếc túi này giá một nghìn euro."],
+["ce / cet / cette / ces","này, đó (tính từ chỉ định)","det","Ngữ pháp","/sə / sɛt / se/","Ce pull, cet article, cette robe, ces chaussures","Áo len này, món hàng này, váy này, đôi giày này"],
+["quel / quelle / quels / quelles","nào (từ để hỏi)","adj interr.","Ngữ pháp","/kɛl/","Quelle taille ? Quels modèles ?","Cỡ nào? Những mẫu nào?"]
+],
+
+/* ---------------- LEÇON 8 ---------------- */
+l8:[
+["un peintre / une peintre","họa sĩ","n","Nghề nghiệp nghệ thuật","/œ̃ pɛ̃tʁ/","Ce peintre expose ses tableaux à Paris.","Họa sĩ này triển lãm tranh của ông ấy ở Paris."],
+["un écrivain / une écrivaine","nhà văn","n","Nghề nghiệp nghệ thuật","/œ̃ ekʁivɛ̃/","Victor Hugo est un grand écrivain.","Victor Hugo là một nhà văn lớn."],
+["un musicien / une musicienne","nhạc sĩ","n","Nghề nghiệp nghệ thuật","/œ̃ myzisjɛ̃/","Elle est musicienne : elle joue du piano.","Cô ấy là nhạc sĩ: cô ấy chơi đàn piano."],
+["un sculpteur / une sculptrice","nhà điêu khắc","n","Nghề nghiệp nghệ thuật","/œ̃ skyltœʁ/","Ce sculpteur travaille le marbre.","Nhà điêu khắc này làm việc với đá cẩm thạch."],
+["un photographe / une photographe","nhiếp ảnh gia","n","Nghề nghiệp nghệ thuật","/œ̃ fɔtɔɡʁaf/","Il est photographe de mode.","Anh ấy là nhiếp ảnh gia thời trang."],
+["un artiste / une artiste","nghệ sĩ","n","Nghề nghiệp nghệ thuật","/œ̃ aʁtist/","C'est un artiste très connu.","Đây là một nghệ sĩ rất nổi tiếng."],
+["un tableau","bức tranh (vẽ trên toan)","n.m","Tác phẩm & địa điểm","/œ̃ tablo/","Ce tableau est magnifique.","Bức tranh này thật tuyệt đẹp."],
+["une sculpture","tác phẩm điêu khắc","n.f","Tác phẩm & địa điểm","/yn skyltyʁ/","Cette sculpture est en pierre.","Tác phẩm điêu khắc này bằng đá."],
+["une photo","bức ảnh","n.f","Tác phẩm & địa điểm","/yn fɔto/","Il prend une photo du musée.","Anh ấy chụp một bức ảnh của bảo tàng."],
+["une œuvre d'art","tác phẩm nghệ thuật","n.f","Tác phẩm & địa điểm","/yn œvʁ daʁ/","La Joconde est une œuvre d'art célèbre.","Nàng Mona Lisa là một tác phẩm nghệ thuật nổi tiếng."],
+["un musée","bảo tàng","n.m","Tác phẩm & địa điểm","/œ̃ myze/","Nous visitons le musée aujourd'hui.","Hôm nay chúng tôi tham quan bảo tàng."],
+["une exposition","cuộc triển lãm","n.f","Tác phẩm & địa điểm","/yn ɛkspozisjɔ̃/","Il y a une exposition de photos.","Có một cuộc triển lãm ảnh."],
+["un cinéma","rạp chiếu phim","n.m","Tác phẩm & địa điểm","/œ̃ sinema/","On va au cinéma ce soir.","Tối nay chúng tôi đi xem phim."],
+["une galerie","phòng trưng bày","n.f","Tác phẩm & địa điểm","/yn ɡalʁi/","Cette galerie vend des tableaux modernes.","Phòng trưng bày này bán tranh hiện đại."],
+["une peinture","hội họa, bức tranh","n.f","Tác phẩm & địa điểm","/yn pɛ̃tyʁ/","J'aime la peinture du XIXe siècle.","Tôi thích hội họa thế kỷ 19."],
+["devant","phía trước, đằng trước","prép.","Vị trí","/dəvɑ̃/","Il y a un jardin devant la maison.","Có một khu vườn trước nhà."],
+["derrière","phía sau, đằng sau","prép.","Vị trí","/dɛʁjɛʁ/","Le garage est derrière l'immeuble.","Ga-ra ở phía sau tòa nhà."],
+["à côté de","bên cạnh","loc. prép.","Vị trí","/a kote də/","Le musée est à côté de la gare.","Bảo tàng ở bên cạnh nhà ga."],
+["en face de","đối diện","loc. prép.","Vị trí","/ɑ̃ fas də/","La banque est en face de la poste.","Ngân hàng ở đối diện bưu điện."],
+["près de","gần","loc. prép.","Vị trí","/pʁɛ də/","J'habite près du musée.","Tôi sống gần bảo tàng."],
+["loin de","xa","loc. prép.","Vị trí","/lwɛ̃ də/","La plage est loin de l'hôtel.","Bãi biển xa khách sạn."],
+["sur","trên","prép.","Vị trí","/syʁ/","Le tableau est sur le mur.","Bức tranh ở trên tường."],
+["sous","dưới","prép.","Vị trí","/su/","Le chat est sous la table.","Con mèo ở dưới bàn."],
+["entre","giữa (hai vật)","prép.","Vị trí","/ɑ̃tʁ/","La pharmacie est entre la banque et l'école.","Hiệu thuốc ở giữa ngân hàng và trường học."],
+["dans","trong","prép.","Vị trí","/dɑ̃/","Il travaille dans son atelier.","Anh ấy làm việc trong xưởng của mình."],
+["moi","tôi (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/mwa/","Toi et moi, nous allons au musée.","Bạn và tôi, chúng ta đi bảo tàng."],
+["toi","bạn (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/twa/","Je viens avec toi.","Tôi đi cùng bạn."],
+["lui","anh ấy (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/lɥi/","Elle part avec lui.","Cô ấy đi cùng anh ấy."],
+["elle","cô ấy (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/ɛl/","Moi, je travaille ; elle, elle étudie.","Tôi thì làm việc; cô ấy thì học."],
+["nous","chúng tôi (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/nu/","Nous, nous aimons l'art moderne.","Chúng tôi, chúng tôi thích nghệ thuật hiện đại."],
+["vous","các bạn (đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/vu/","Vous, vous venez avec nous ?","Các bạn, các bạn đến với chúng tôi chứ?"],
+["eux","họ (nam, đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/ø/","Paul et Marc ? Je sors avec eux.","Paul và Marc à? Tôi đi chơi với họ."],
+["elles","họ (nữ, đại từ nhấn mạnh)","pron. tonique","Đại từ nhấn mạnh","/ɛl/","Marie et Julie ? Je travaille avec elles.","Marie và Julie à? Tôi làm việc với họ."]
+],
+
+/* ---------------- LEÇON 9 ---------------- */
+l9:[
+["un appartement","căn hộ","n.m","Nhà ở & các phòng","/œ̃ apaʁtəmɑ̃/","Nous habitons dans un appartement au 3e étage.","Chúng tôi sống trong một căn hộ ở tầng 3."],
+["un immeuble","tòa nhà","n.m","Nhà ở & các phòng","/œ̃ imœbl/","Cet immeuble a dix étages.","Tòa nhà này có mười tầng."],
+["une chambre","phòng ngủ","n.f","Nhà ở & các phòng","/yn ʃɑ̃bʁ/","Ma chambre est petite mais calme.","Phòng ngủ của tôi nhỏ nhưng yên tĩnh."],
+["une cuisine","nhà bếp","n.f","Nhà ở & các phòng","/yn kɥizin/","On prépare le repas dans la cuisine.","Người ta nấu ăn trong nhà bếp."],
+["un salon","phòng khách","n.m","Nhà ở & các phòng","/œ̃ salɔ̃/","Nous regardons la télévision dans le salon.","Chúng tôi xem tivi trong phòng khách."],
+["une salle de bains","phòng tắm","n.f","Nhà ở & các phòng","/yn sal də bɛ̃/","Il y a une douche dans la salle de bains.","Có một vòi sen trong phòng tắm."],
+["une entrée","lối vào, sảnh vào","n.f","Nhà ở & các phòng","/yn ɑ̃tʁe/","Les clés sont sur la table de l'entrée.","Chìa khóa ở trên bàn ở lối vào."],
+["un couloir","hành lang","n.m","Nhà ở & các phòng","/œ̃ kulwaʁ/","La chambre est au bout du couloir.","Phòng ngủ ở cuối hành lang."],
+["un balcon","ban công","n.m","Nhà ở & các phòng","/œ̃ balkɔ̃/","On prend le café sur le balcon.","Người ta uống cà phê trên ban công."],
+["un garage","ga-ra","n.m","Nhà ở & các phòng","/œ̃ ɡaʁaʒ/","Il gare sa voiture dans le garage.","Anh ấy đỗ xe trong ga-ra."],
+["un ascenseur","thang máy","n.m","Nhà ở & các phòng","/œ̃ asɑ̃sœʁ/","Prenons l'ascenseur, c'est au 6e.","Hãy đi thang máy, ở tầng 6."],
+["un escalier","cầu thang","n.m","Nhà ở & các phòng","/œ̃ ɛskalje/","L'escalier est à droite de l'entrée.","Cầu thang ở bên phải lối vào."],
+["des toilettes","nhà vệ sinh","n.f.pl","Nhà ở & các phòng","/de twalɛt/","Les toilettes sont à gauche.","Nhà vệ sinh ở bên trái."],
+["une fenêtre","cửa sổ","n.f","Nhà ở & các phòng","/yn fənɛtʁ/","La fenêtre donne sur la rue.","Cửa sổ nhìn ra đường."],
+["une porte","cửa ra vào","n.f","Nhà ở & các phòng","/yn pɔʁt/","Ferme la porte, s'il te plaît.","Làm ơn đóng cửa lại."],
+["un meuble","đồ nội thất","n.m","Nhà ở & các phòng","/œ̃ mœbl/","Ce meuble est ancien.","Món đồ nội thất này cũ."],
+["grand / grande","lớn, rộng","adj","Tính từ mô tả","/ɡʁɑ̃ / ɡʁɑ̃d/","C'est un grand appartement.","Đây là một căn hộ rộng."],
+["petit / petite","nhỏ","adj","Tính từ mô tả","/pəti / pətit/","La cuisine est petite.","Nhà bếp thì nhỏ."],
+["lumineux / lumineuse","sáng sủa, nhiều ánh sáng","adj","Tính từ mô tả","/lyminø / lyminøz/","Le salon est très lumineux.","Phòng khách rất sáng sủa."],
+["sombre","tối, thiếu ánh sáng","adj","Tính từ mô tả","/sɔ̃bʁ/","Cette chambre est sombre.","Phòng ngủ này tối."],
+["calme","yên tĩnh","adj","Tính từ mô tả","/kalm/","Le quartier est calme.","Khu phố yên tĩnh."],
+["bruyant / bruyante","ồn ào","adj","Tính từ mô tả","/bʁɥijɑ̃ / bʁɥijɑ̃t/","L'avenue est bruyante.","Đại lộ thì ồn ào."],
+["moderne","hiện đại","adj","Tính từ mô tả","/mɔdɛʁn/","C'est un immeuble moderne.","Đây là một tòa nhà hiện đại."],
+["ancien / ancienne","cũ, cổ","adj","Tính từ mô tả","/ɑ̃sjɛ̃ / ɑ̃sjɛn/","Un appartement ancien mais charmant.","Một căn hộ cũ nhưng duyên dáng."],
+["confortable","thoải mái","adj","Tính từ mô tả","/kɔ̃fɔʁtabl/","Ce canapé est confortable.","Chiếc ghế sofa này thoải mái."],
+["le rez-de-chaussée","tầng trệt","n.m","Tầng & bất động sản","/lə ʁedʃose/","L'appartement est au rez-de-chaussée.","Căn hộ ở tầng trệt."],
+["le premier étage","tầng một (trên tầng trệt)","n.m","Tầng & bất động sản","/lə pʁəmje ʁetaʒ/","J'habite au premier étage.","Tôi sống ở tầng một."],
+["le deuxième étage","tầng hai","n.m","Tầng & bất động sản","/lə døzjɛm ʁetaʒ/","La salle est au deuxième étage.","Căn phòng ở tầng hai."],
+["le dernier étage","tầng trên cùng","n.m","Tầng & bất động sản","/lə dɛʁnje ʁetaʒ/","Ils habitent au dernier étage.","Họ sống ở tầng trên cùng."],
+["F1 / F2 / F3","căn hộ 1 / 2 / 3 phòng chính","n.m","Tầng & bất động sản","/ɛf œ̃ / ɛf dø/","Un F3 a trois pièces principales.","Căn F3 có ba phòng chính."],
+["une pièce","phòng","n.f","Tầng & bất động sản","/yn pjɛs/","Un appartement de trois pièces.","Một căn hộ ba phòng."],
+["au premier étage","ở tầng một","loc.","Tầng & bất động sản","/o pʁəmje ʁetaʒ/","Le musée est au premier étage.","Bảo tàng ở tầng một."]
+],
+
+/* ---------------- LEÇON 10 ---------------- */
+l10:[
+["une gare","nhà ga","n.f","Địa điểm công cộng","/yn ɡaʁ/","Le train part de la gare de Lyon.","Tàu khởi hành từ ga Lyon."],
+["une banque","ngân hàng","n.f","Địa điểm công cộng","/yn bɑ̃k/","Je retire de l'argent à la banque.","Tôi rút tiền ở ngân hàng."],
+["une pharmacie","hiệu thuốc","n.f","Địa điểm công cộng","/yn faʁmasi/","La pharmacie est ouverte le dimanche.","Hiệu thuốc mở cửa vào Chủ nhật."],
+["une poste","bưu điện","n.f","Địa điểm công cộng","/yn pɔst/","J'envoie une lettre à la poste.","Tôi gửi một lá thư ở bưu điện."],
+["un supermarché","siêu thị","n.m","Địa điểm công cộng","/œ̃ sypɛʁmaʁʃe/","J'achète du pain au supermarché.","Tôi mua bánh mì ở siêu thị."],
+["un arrêt de bus","trạm xe buýt","n.m","Địa điểm công cộng","/œ̃ aʁɛ də bys/","L'arrêt de bus est devant l'école.","Trạm xe buýt ở trước trường học."],
+["une école","trường học","n.f","Địa điểm công cộng","/yn ekɔl/","Les enfants vont à l'école à pied.","Bọn trẻ đi bộ đến trường."],
+["un hôpital","bệnh viện","n.m","Địa điểm công cộng","/œ̃ ɔpital/","L'hôpital est à côté de la pharmacie.","Bệnh viện ở bên cạnh hiệu thuốc."],
+["une station de métro","ga tàu điện ngầm","n.f","Địa điểm công cộng","/yn stasjɔ̃ də metʁo/","La station de métro est en face.","Ga tàu điện ngầm ở đối diện."],
+["un hôtel","khách sạn","n.m","Địa điểm công cộng","/œ̃ otɛl/","Notre hôtel est près de la gare.","Khách sạn của chúng tôi ở gần nhà ga."],
+["le bus","xe buýt","n.m","Giao thông","/lə bys/","Je prends le bus tous les matins.","Tôi đi xe buýt mỗi sáng."],
+["le train","tàu hỏa","n.m","Giao thông","/lə tʁɛ̃/","Le train pour Lyon part à 8 heures.","Tàu đi Lyon khởi hành lúc 8 giờ."],
+["le métro","tàu điện ngầm","n.m","Giao thông","/lə metʁo/","À Paris, on prend souvent le métro.","Ở Paris, người ta thường đi tàu điện ngầm."],
+["la voiture","ô tô","n.f","Giao thông","/la vwatyʁ/","Il conduit sa voiture au travail.","Anh ấy lái ô tô đi làm."],
+["le vélo","xe đạp","n.m","Giao thông","/lə velo/","Elle va au bureau à vélo.","Cô ấy đi xe đạp đến văn phòng."],
+["l'avion","máy bay","n.m","Giao thông","/lavjɔ̃/","L'avion arrive à 15 heures.","Máy bay đến lúc 15 giờ."],
+["le bateau","tàu thuyền","n.m","Giao thông","/lə bato/","On traverse le fleuve en bateau.","Người ta qua sông bằng tàu."],
+["le taxi","taxi","n.m","Giao thông","/lə taksi/","Je prends un taxi pour aller à l'aéroport.","Tôi bắt taxi để ra sân bay."],
+["allez tout droit","hãy đi thẳng","expr","Chỉ đường","/ale tu dʁwa/","Allez tout droit pendant 200 mètres.","Hãy đi thẳng khoảng 200 mét."],
+["tournez à droite","hãy rẽ phải","expr","Chỉ đường","/tuʁne a dʁwat/","Au carrefour, tournez à droite.","Ở ngã tư, hãy rẽ phải."],
+["tournez à gauche","hãy rẽ trái","expr","Chỉ đường","/tuʁne a ɡoʃ/","Tournez à gauche après la banque.","Hãy rẽ trái sau ngân hàng."],
+["prenez la première rue","hãy rẽ vào con phố đầu tiên","expr","Chỉ đường","/pʁəne la pʁəmjɛʁ ʁy/","Prenez la première rue à droite.","Hãy rẽ vào con phố đầu tiên bên phải."],
+["prenez la deuxième rue","hãy rẽ vào con phố thứ hai","expr","Chỉ đường","/pʁəne la døzjɛm ʁy/","Prenez la deuxième rue à gauche.","Hãy rẽ vào con phố thứ hai bên trái."],
+["traversez la rue","hãy băng qua đường","expr","Chỉ đường","/tʁavɛʁse la ʁy/","Traversez la rue : le musée est en face.","Hãy băng qua đường: bảo tàng ở đối diện."],
+["continuez","hãy tiếp tục","v (impératif)","Chỉ đường","/kɔ̃tinɥe/","Continuez tout droit, c'est tout près.","Cứ tiếp tục đi thẳng, sắp đến rồi."],
+["arrêtez-vous","hãy dừng lại","v (impératif)","Chỉ đường","/aʁɛte vu/","Arrêtez-vous au feu rouge.","Hãy dừng lại ở đèn đỏ."],
+["à droite","ở bên phải","loc.","Chỉ đường","/a dʁwat/","La poste est à droite.","Bưu điện ở bên phải."],
+["à gauche","ở bên trái","loc.","Chỉ đường","/a ɡoʃ/","La pharmacie est à gauche.","Hiệu thuốc ở bên trái."],
+["tout droit","thẳng","loc.","Chỉ đường","/tu dʁwa/","C'est tout droit, à 100 mètres.","Đi thẳng, khoảng 100 mét."],
+["le plan","bản đồ thành phố","n.m","Chỉ đường","/lə plɑ̃/","Je cherche la rue sur le plan.","Tôi tìm con phố trên bản đồ."],
+["un carrefour","ngã tư","n.m","Chỉ đường","/œ̃ kaʁfuʁ/","Tournez à droite au carrefour.","Hãy rẽ phải ở ngã tư."],
+["un feu (rouge)","đèn (đỏ) giao thông","n.m","Chỉ đường","/œ̃ fø/","Attendez au feu rouge.","Hãy đợi ở đèn đỏ."],
+["à pied","đi bộ","loc.","Phương tiện","/a pje/","Je vais au travail à pied.","Tôi đi bộ đến chỗ làm."],
+["à vélo","bằng xe đạp","loc.","Phương tiện","/a velo/","Elle va à l'école à vélo.","Cô ấy đi học bằng xe đạp."],
+["en voiture","bằng ô tô","loc.","Phương tiện","/ɑ̃ vwatyʁ/","Nous partons en voiture.","Chúng tôi đi bằng ô tô."],
+["en bus","bằng xe buýt","loc.","Phương tiện","/ɑ̃ bys/","Tu vas au centre-ville en bus ?","Bạn đi vào trung tâm thành phố bằng xe buýt à?"],
+["en train","bằng tàu hỏa","loc.","Phương tiện","/ɑ̃ tʁɛ̃/","Ils voyagent en train.","Họ đi du lịch bằng tàu hỏa."],
+["en avion","bằng máy bay","loc.","Phương tiện","/ɑ̃ navjɔ̃/","Nous allons à Marseille en avion.","Chúng tôi đi Marseille bằng máy bay."],
+["en bateau","bằng tàu thuyền","loc.","Phương tiện","/ɑ̃ bato/","On visite les îles en bateau.","Người ta tham quan các đảo bằng tàu."]
+],
+
+/* ---------------- LEÇON 11 ---------------- */
+l11:[
+["un voyage","chuyến đi, cuộc du lịch","n.m","Du lịch","/œ̃ vwajaʒ/","Nous faisons un voyage à Paris.","Chúng tôi có một chuyến đi đến Paris."],
+["un touriste / une touriste","du khách","n","Du lịch","/œ̃ tuʁist/","En été, il y a beaucoup de touristes.","Vào mùa hè, có rất nhiều du khách."],
+["visiter","tham quan","v","Du lịch","/vizite/","Nous visitons le musée du Louvre.","Chúng tôi tham quan bảo tàng Louvre."],
+["partir","khởi hành, rời đi","v","Du lịch","/paʁtiʁ/","Le train part à huit heures.","Tàu khởi hành lúc tám giờ."],
+["arriver","đến","v","Du lịch","/aʁive/","Le train arrive à Marseille à midi.","Tàu đến Marseille lúc giữa trưa."],
+["un billet","vé","n.m","Du lịch","/œ̃ bijɛ/","J'achète un billet de train.","Tôi mua một vé tàu."],
+["une destination","điểm đến","n.f","Du lịch","/yn dɛstinasjɔ̃/","Notre destination, c'est la Provence.","Điểm đến của chúng tôi là Provence."],
+["une visite","chuyến tham quan","n.f","Du lịch","/yn vizit/","Nous faisons une visite guidée.","Chúng tôi có một chuyến tham quan có hướng dẫn."],
+["un séjour","kỳ nghỉ, thời gian lưu trú","n.m","Du lịch","/œ̃ seʒuʁ/","Nous passons un séjour de deux semaines.","Chúng tôi có một kỳ nghỉ hai tuần."],
+["un guide","hướng dẫn viên, sách hướng dẫn","n.m","Du lịch","/œ̃ ɡid/","Le guide explique l'histoire de la ville.","Hướng dẫn viên giải thích lịch sử thành phố."],
+["un hôtel","khách sạn","n.m","Lưu trú","/œ̃ otɛl/","Nous dormons dans un hôtel du centre.","Chúng tôi ngủ ở một khách sạn trung tâm."],
+["une chambre simple","phòng đơn","n.f","Lưu trú","/yn ʃɑ̃bʁ sɛ̃pl/","Je voudrais une chambre simple.","Tôi muốn một phòng đơn."],
+["une chambre double","phòng đôi","n.f","Lưu trú","/yn ʃɑ̃bʁ dubl/","Nous réservons une chambre double.","Chúng tôi đặt một phòng đôi."],
+["une réservation","sự đặt chỗ, đặt phòng","n.f","Lưu trú","/yn ʁezɛʁvasjɔ̃/","J'ai une réservation au nom de Nguyen.","Tôi có một đặt phòng mang tên Nguyen."],
+["la réception","quầy lễ tân","n.f","Lưu trú","/la ʁesɛpsjɔ̃/","On prend la clé à la réception.","Người ta lấy chìa khóa ở quầy lễ tân."],
+["une clé","chìa khóa","n.f","Lưu trú","/yn kle/","Voici votre clé, chambre 204.","Đây là chìa khóa của bạn, phòng 204."],
+["réserver","đặt trước","v","Lưu trú","/ʁezɛʁve/","Je voudrais réserver une chambre.","Tôi muốn đặt một phòng."],
+["séjourner","lưu trú","v","Lưu trú","/seʒuʁne/","Nous séjournons trois jours à Nice.","Chúng tôi lưu trú ba ngày ở Nice."],
+["le nord","phía bắc","n.m","Địa lý","/lə nɔʁ/","Lille est dans le nord de la France.","Lille ở phía bắc nước Pháp."],
+["le sud","phía nam","n.m","Địa lý","/lə syd/","Marseille est dans le sud.","Marseille ở phía nam."],
+["l'est","phía đông","n.m","Địa lý","/lɛst/","Strasbourg est à l'est.","Strasbourg ở phía đông."],
+["l'ouest","phía tây","n.m","Địa lý","/lwɛst/","Brest est à l'ouest de la France.","Brest ở phía tây nước Pháp."],
+["la mer","biển","n.f","Địa lý","/la mɛʁ/","En été, on nage dans la mer.","Vào mùa hè, người ta bơi ở biển."],
+["une plage","bãi biển","n.f","Địa lý","/yn plaʒ/","On se repose sur la plage.","Người ta nghỉ ngơi trên bãi biển."],
+["une montagne","núi","n.f","Địa lý","/yn mɔ̃taɲ/","Le Mont Blanc est une montagne très haute.","Mont Blanc là một ngọn núi rất cao."],
+["une île","hòn đảo","n.f","Địa lý","/yn il/","La Corse est une île de la Méditerranée.","Corse là một hòn đảo ở Địa Trung Hải."],
+["une ville","thành phố","n.f","Địa lý","/yn vil/","Paris est une grande ville.","Paris là một thành phố lớn."],
+["un pays","đất nước","n.m","Địa lý","/œ̃ pei/","Le Vietnam est un beau pays.","Việt Nam là một đất nước xinh đẹp."],
+["bon voyage","chúc thượng lộ bình an","expr","Cụm từ hữu ích","/bɔ̃ vwajaʒ/","Le train part : bon voyage !","Tàu sắp chạy: chúc thượng lộ bình an!"],
+["bon séjour","chúc kỳ nghỉ vui vẻ","expr","Cụm từ hữu ích","/bɔ̃ seʒuʁ/","Bon séjour à Nice !","Chúc kỳ nghỉ vui vẻ ở Nice!"],
+["bienvenue","chào mừng","expr","Cụm từ hữu ích","/bjɛ̃vəny/","Bienvenue à Paris !","Chào mừng đến Paris!"],
+["à bientôt","hẹn gặp lại","expr","Cụm từ hữu ích","/a bjɛ̃to/","À bientôt, Marie !","Hẹn gặp lại, Marie!"],
+["à demain","hẹn ngày mai gặp lại","expr","Cụm từ hữu ích","/a dəmɛ̃/","À demain, à la gare !","Mai gặp lại ở nhà ga nhé!"],
+["on","người ta, chúng ta (đại từ chung)","pron. indéfini","Cụm từ hữu ích","/ɔ̃/","On visite le musée demain.","Ngày mai chúng ta tham quan bảo tàng."]
+],
+
+/* ---------------- LEÇON 12 ---------------- */
+l12:[
+["Marseille","thành phố Marseille","n.pr","Địa danh","/maʁsɛj/","Marseille est une grande ville du sud.","Marseille là một thành phố lớn ở miền nam."],
+["le Vieux-Port","Bến cảng Cũ","n.pr","Địa danh","/lə vjø pɔʁ/","On se promène sur le Vieux-Port.","Người ta đi dạo ở Bến cảng Cũ."],
+["Notre-Dame de la Garde","Nhà thờ Đức Bà La Garde","n.pr","Địa danh","/nɔtʁə dam də la ɡaʁd/","Notre-Dame de la Garde domine la ville.","Nhà thờ Đức Bà La Garde nhìn bao quát thành phố."],
+["une basilique","vương cung thánh đường","n.f","Địa danh","/yn bazilik/","Notre-Dame de la Garde est une basilique.","Notre-Dame de la Garde là một vương cung thánh đường."],
+["une église","nhà thờ","n.f","Địa danh","/yn eɡliz/","Cette église a huit cents ans.","Nhà thờ này đã tám trăm năm tuổi."],
+["un port","cảng","n.m","Địa danh","/œ̃ pɔʁ/","Les bateaux sont dans le port.","Những con tàu ở trong cảng."],
+["un quartier","khu phố","n.m","Địa danh","/œ̃ kaʁtje/","Le Panier est un quartier historique.","Le Panier là một khu phố lịch sử."],
+["un monument","di tích, công trình tưởng niệm","n.m","Địa danh","/œ̃ mɔnymɑ̃/","Ce monument est très visité.","Di tích này được tham quan rất nhiều."],
+["la Méditerranée","Địa Trung Hải","n.pr.f","Địa danh","/la meditɛʁane/","Marseille est au bord de la Méditerranée.","Marseille ở bờ Địa Trung Hải."],
+["une colline","đồi","n.f","Địa danh","/yn kɔlin/","La basilique est sur une colline.","Vương cung thánh đường ở trên một ngọn đồi."],
+["la Canebière","phố Canebière","n.pr","Địa danh","/la kanəbjɛʁ/","La Canebière est la grande avenue de Marseille.","Canebière là đại lộ lớn của Marseille."],
+["une calanque","vịnh đá nhỏ (đặc trưng Marseille)","n.f","Địa danh","/yn kalɑ̃k/","Les calanques sont magnifiques.","Những vịnh đá nhỏ thật tuyệt đẹp."],
+["un ferry","phà","n.m","Du lịch Marseille","/œ̃ fɛʁi/","On prend le ferry pour l'île d'If.","Người ta đi phà ra đảo If."],
+["une carte postale","bưu thiếp","n.f","Du lịch Marseille","/yn kaʁt pɔstal/","J'écris une carte postale à mes parents.","Tôi viết một tấm bưu thiếp cho bố mẹ."],
+["un souvenir","quà lưu niệm","n.m","Du lịch Marseille","/œ̃ suvəniʁ/","J'achète un souvenir pour ma sœur.","Tôi mua một món quà lưu niệm cho chị tôi."],
+["un touriste","du khách","n.m","Du lịch Marseille","/œ̃ tuʁist/","Un touriste visite la basilique.","Một du khách tham quan vương cung thánh đường."],
+["une visite","chuyến tham quan","n.f","Du lịch Marseille","/yn vizit/","La visite du Vieux-Port dure une heure.","Chuyến tham quan Bến cảng Cũ kéo dài một giờ."],
+["une promenade","cuộc đi dạo","n.f","Du lịch Marseille","/yn pʁɔmnad/","Nous faisons une promenade au port.","Chúng tôi đi dạo ở cảng."],
+["le soleil","mặt trời","n.m","Du lịch Marseille","/lə sɔlɛj/","Il y a du soleil à Marseille.","Ở Marseille có nắng."],
+["le savon de Marseille","xà phòng Marseille","n.m","Du lịch Marseille","/lə savɔ̃ də maʁsɛj/","Le savon de Marseille est célèbre.","Xà phòng Marseille rất nổi tiếng."],
+["il fait beau","trời đẹp","expr","Cụm từ hữu ích","/il fɛ bo/","Il fait beau, allons à la plage !","Trời đẹp, hãy ra biển!"],
+["Bonjour de Marseille !","Xin chào từ Marseille!","expr","Bưu thiếp","/bɔ̃ʒuʁ də maʁsɛj/","« Bonjour de Marseille ! » écrit-il.","“Xin chào từ Marseille!” anh ấy viết."],
+["Nous sommes à Marseille.","Chúng tôi đang ở Marseille.","expr","Bưu thiếp","/nu sɔm a maʁsɛj/","Nous sommes à Marseille pour une semaine.","Chúng tôi ở Marseille một tuần."],
+["Nous visitons…","Chúng tôi đang tham quan…","expr","Bưu thiếp","/nu vizitɔ̃/","Nous visitons le Vieux-Port.","Chúng tôi đang tham quan Bến cảng Cũ."],
+["À bientôt !","Hẹn gặp lại!","expr","Bưu thiếp","/a bjɛ̃to/","À bientôt, mes amis !","Hẹn gặp lại, các bạn của tôi!"],
+["Gros bisous.","Thân ái (hôn nhiều).","expr","Bưu thiếp","/ɡʁo bizu/","Gros bisous, maman.","Thân ái, mẹ."],
+["Je t'embrasse.","Thân mến (hôn bạn).","expr","Bưu thiếp","/ʒə tɑ̃bʁas/","Je t'embrasse, Léa.","Thân mến, Léa."],
+["Bon voyage !","Chúc lên đường vui vẻ!","expr","Bưu thiếp","/bɔ̃ vwajaʒ/","Bon voyage et à bientôt !","Chúc lên đường vui vẻ và hẹn gặp lại!"]
+]
+};
+
+/* ---------------- BÀI TẬP THEO NGỮ CẢNH ----------------
+   [0] câu có chỗ trống  [1] bốn lựa chọn  [2] đáp án đúng  [3] giải thích */
+
+const RAW_CTX = {
+
+l7:[
+["Je mets une ___ quand il fait froid.","une robe","une écharpe","une jupe","une chemise","une écharpe","« une écharpe » là khăn quàng cổ, thường dùng khi trời lạnh."],
+["— Quelle taille faites-vous ? — Je fais du ___.","rouge","M","cher","musée","M","« la taille » là cỡ quần áo; « M » là cỡ trung bình (medium)."],
+["Cette robe coûte 200 euros : elle est très ___.","bon marché","chère","blanche","petite","chère","« cher / chère » nghĩa là đắt. 200 euro là rất đắt."],
+["— Je peux ___ ce pantalon ? — Oui, la cabine est là-bas.","vendre","essayer","payer","vendre","essayer","« essayer » là thử (quần áo). Phòng thử đồ gọi là « la cabine »."],
+["— ___ coûte ce sac ? — 45 euros.","Combien","Quelle","Où","Qui","Combien","« Combien » dùng để hỏi giá: Combien coûte… ?"],
+["Il fait très froid, je prends mon ___.","chapeau","manteau","sac","ceinture","manteau","« un manteau » là áo khoác dài, mặc khi trời lạnh."],
+["Pour marcher dans la rue, je mets mes ___.","chaussures","chapeaux","ceintures","sacs","chaussures","« des chaussures » là giày, dùng để đi lại."],
+["Cette veste est en ___ : elle coûte moins cher.","taille","promotion","caisse","prix","promotion","« en promotion » nghĩa là đang giảm giá."],
+["— Quel est le ___ de cette veste ? — 60 euros.","prix","taille","sac","magasin","prix","« le prix » là giá cả của món hàng."],
+["Ce magasin ___ des vêtements pour hommes.","achète","vend","essaie","prend","vend","« vendre » là bán. Cửa hàng bán quần áo nam."],
+["Ces chaussures sont ___ : seulement 20 euros !","chères","bon marché","grandes","noires","bon marché","« bon marché » nghĩa là rẻ, giá thấp."],
+["70 en français, c'est ___.","soixante-dix","quatre-vingts","quatre-vingt-dix","cent","soixante-dix","70 = soixante-dix (60 + 10), một cách nói đặc biệt của tiếng Pháp."],
+["80 en français, c'est ___.","soixante-dix","quatre-vingts","quatre-vingt-dix","mille","quatre-vingts","80 = quatre-vingts (4 × 20)."],
+["90 en français, c'est ___.","quatre-vingts","quatre-vingt-dix","soixante-dix","cent","quatre-vingt-dix","90 = quatre-vingt-dix (4 × 20 + 10)."],
+["1000 en français, c'est ___.","cent","mille","dix","quatre-vingts","mille","« mille » là một nghìn (1000); « cent » là một trăm (100)."],
+["___ robe est très jolie.","Ce","Cet","Cette","Ces","Cette","« robe » là danh từ giống cái số ít nên dùng « cette »."],
+["___ chaussures sont trop petites.","Ce","Cet","Cette","Ces","Ces","« chaussures » là danh từ số nhiều nên dùng « ces »."],
+["___ taille faites-vous ?","Quel","Quelle","Quels","Quelles","Quelle","« taille » là danh từ giống cái số ít nên dùng « quelle »."],
+["___ modèles préférez-vous ?","Quel","Quelle","Quels","Quelles","Quels","« modèles » là danh từ giống đực số nhiều nên dùng « quels »."],
+["___ article est en promotion.","Ce","Cet","Cette","Ces","Cet","Trước danh từ giống đực bắt đầu bằng nguyên âm, dùng « cet »."],
+["Pour le travail, il porte ___.","une jupe rouge","une chemise blanche","des chaussettes vertes","un sac noir","une chemise blanche","« une chemise blanche » là áo sơ mi trắng, phù hợp khi đi làm."],
+["___ est très gentille avec les clients.","La vendeuse","Le prix","La caisse","La taille","La vendeuse","« la vendeuse » là cô bán hàng, người tiếp khách."],
+["Vous payez à ___, s'il vous plaît.","la caisse","la taille","la promotion","l'écharpe","la caisse","« la caisse » là quầy thu ngân, nơi trả tiền."],
+["« cent » en chiffres, c'est ___.","10","100","1000","70","100","« cent » = 100; « mille » = 1000."],
+["Il met une ___ avec son pantalon.","ceinture","écharpe","chaussette","chapeau","ceinture","« une ceinture » là thắt lưng, đeo quanh eo quần."],
+["En hiver, je porte des ___ dans mes chaussures.","chaussettes","chapeaux","ceintures","jupes","chaussettes","« des chaussettes » là tất (vớ), mang ở chân."]
+],
+
+l8:[
+["Le ___ expose ses tableaux dans une galerie.","peintre","musicien","écrivain","touriste","peintre","« un peintre » là họa sĩ, người vẽ tranh."],
+["Victor Hugo est un grand ___ français.","écrivain","peintre","sculpteur","photographe","écrivain","« un écrivain » là nhà văn, người viết sách."],
+["Elle joue très bien du piano : c'est une ___.","musicienne","écrivaine","photographe","peintre","musicienne","« une musicienne » là nhạc sĩ nữ."],
+["Ce ___ travaille le marbre et la pierre.","sculpteur","écrivain","musicien","guide","sculpteur","« un sculpteur » là nhà điêu khắc, làm việc với đá."],
+["Il prend des photos de mode : c'est un ___.","photographe","peintre","musicien","sculpteur","photographe","« un photographe » là nhiếp ảnh gia."],
+["Nous allons voir une ___ de photos au musée.","exposition","gare","chambre","plage","exposition","« une exposition » là cuộc triển lãm."],
+["La Joconde est un ___ très célèbre.","tableau","musée","cinéma","balcon","tableau","« un tableau » là bức tranh vẽ trên toan."],
+["On regarde un film au ___.","cinéma","musée","galerie","hôtel","cinéma","« le cinéma » là rạp chiếu phim."],
+["Cette ___ est une œuvre d'art en pierre.","sculpture","photo","clé","taille","sculpture","« une sculpture » là tác phẩm điêu khắc."],
+["Le ___ de la ville présente des peintures modernes.","musée","couloir","garage","ascenseur","musée","« un musée » là bảo tàng, nơi trưng bày tác phẩm."],
+["Dans cette rue, il y a une ___ qui vend des tableaux.","galerie","pharmacie","banque","poste","galerie","« une galerie » là phòng trưng bày (và bán) tác phẩm nghệ thuật."],
+["La banque est ___ la poste : elles sont l'une devant l'autre.","à côté de","en face de","sous","dans","en face de","« en face de » nghĩa là đối diện."],
+["Le musée est ___ de la gare : seulement 100 mètres.","loin","près","sur","sous","près","« près de » nghĩa là gần."],
+["Il habite ___ de Paris : à 300 kilomètres.","loin","près","à côté","en face","loin","« loin de » nghĩa là xa."],
+["Le tableau est ___ le mur du salon.","sur","sous","dans","entre","sur","« sur » nghĩa là ở trên bề mặt."],
+["Le livre est tombé ___ la table.","sous","sur","devant","entre","sous","« sous » nghĩa là ở dưới."],
+["La pharmacie est ___ la banque et l'école.","entre","sur","sous","dans","entre","« entre » nghĩa là ở giữa hai vật."],
+["Le sculpteur travaille ___ son atelier.","dans","sur","sous","entre","dans","« dans » nghĩa là ở trong một không gian."],
+["— Tu viens avec ___ ? — Oui, je viens avec toi.","moi","toi","lui","eux","moi","Sau giới từ « avec », dùng đại từ nhấn mạnh « moi »."],
+["— Elle part avec ___ ? — Oui, avec Paul.","lui","elle","toi","moi","lui","« lui » là đại từ nhấn mạnh cho một người nam."],
+["Marie et Julie ? Je sors avec ___.","elles","eux","nous","vous","elles","« elles » là đại từ nhấn mạnh cho nhóm toàn nữ."],
+["Paul et Marc ? Je travaille avec ___.","eux","elles","nous","vous","eux","« eux » là đại từ nhấn mạnh cho nhóm toàn nam (hoặc hỗn hợp)."],
+["— Qui est là ? — C'est ___, Sophie.","moi","toi","lui","eux","moi","Khi tự giới thiệu, dùng « moi » (C'est moi)."],
+["Le tableau est ___ de la porte : juste à gauche.","à côté","loin","sous","dans","à côté","« à côté de » nghĩa là bên cạnh."],
+["Le chat dort ___ le canapé, caché.","derrière","devant","sur","dans","derrière","« derrière » nghĩa là ở phía sau."]
+],
+
+l9:[
+["Nous habitons dans un ___ au troisième étage.","appartement","garage","balcon","couloir","appartement","« un appartement » là căn hộ."],
+["On prépare les repas dans la ___.","cuisine","chambre","salle de bains","entrée","cuisine","« la cuisine » là nhà bếp."],
+["Je dors dans ma ___.","chambre","cuisine","salon","garage","chambre","« une chambre » là phòng ngủ."],
+["On regarde la télévision dans le ___.","salon","couloir","ascenseur","balcon","salon","« le salon » là phòng khách."],
+["Je me lave dans la ___.","salle de bains","cuisine","chambre","entrée","salle de bains","« la salle de bains » là phòng tắm."],
+["Il y a beaucoup de monde : prenons l'___.","ascenseur","escalier","balcon","garage","ascenseur","« un ascenseur » là thang máy."],
+["Il gare sa voiture dans le ___.","garage","salon","couloir","balcon","garage","« un garage » là ga-ra để xe."],
+["On prend le café sur le ___, au soleil.","balcon","couloir","garage","ascenseur","balcon","« un balcon » là ban công."],
+["Les chambres sont au bout du ___.","couloir","balcon","garage","ascenseur","couloir","« un couloir » là hành lang."],
+["Cet appartement est très ___ : il y a beaucoup de fenêtres.","lumineux","sombre","bruyant","ancien","lumineux","« lumineux » nghĩa là sáng sủa, nhiều ánh sáng."],
+["Cette chambre est ___ : on ne voit presque rien.","sombre","lumineuse","calme","moderne","sombre","« sombre » nghĩa là tối, thiếu ánh sáng."],
+["J'aime ce quartier : il est très ___.","calme","bruyant","sombre","cher","calme","« calme » nghĩa là yên tĩnh."],
+["L'avenue est ___ : il y a trop de voitures.","bruyante","calme","lumineuse","petite","bruyante","« bruyant / bruyante » nghĩa là ồn ào."],
+["C'est un ___ immeuble : il a deux cents ans.","ancien","moderne","grand","petit","ancien","« ancien / ancienne » nghĩa là cũ, cổ."],
+["Cet appartement est ___ : trois pièces et 80 m².","grand","petit","sombre","bruyant","grand","« grand » nghĩa là lớn, rộng."],
+["Le studio est trop ___ pour quatre personnes.","petit","grand","calme","moderne","petit","« petit » nghĩa là nhỏ."],
+["Ce canapé est très ___ : on est très bien assis.","confortable","sombre","bruyant","ancien","confortable","« confortable » nghĩa là thoải mái."],
+["L'appartement est au ___ : on entre directement depuis la rue.","rez-de-chaussée","premier étage","dernier étage","balcon","rez-de-chaussée","« le rez-de-chaussée » là tầng trệt, ngang mặt đường."],
+["J'habite au ___ étage : juste au-dessus du rez-de-chaussée.","premier","deuxième","dernier","rez-de-chaussée","premier","« le premier étage » là tầng ngay trên tầng trệt."],
+["Il prend l'ascenseur jusqu'au ___ étage, au sixième.","dernier","premier","rez-de-chaussée","deuxième","dernier","« le dernier étage » là tầng trên cùng."],
+["Un ___ est un appartement avec deux pièces principales.","F2","F1","F3","F4","F2","« F2 » nghĩa là căn hộ có 2 phòng chính (F = pièce)."],
+["Dans un F3, il y a ___ pièces principales.","trois","une","deux","quatre","trois","« F3 » = căn hộ ba phòng chính."],
+["La boulangerie est ___ de chez moi : 50 mètres.","près","loin","sous","entre","près","« près de » nghĩa là gần."],
+["La tour Eiffel est ___ de mon appartement : 10 kilomètres.","loin","près","à côté","sur","loin","« loin de » nghĩa là xa."],
+["Le balcon est ___ la chambre, juste à côté.","à côté de","dans","sous","entre","à côté de","« à côté de » nghĩa là bên cạnh."]
+],
+
+l10:[
+["Pour prendre le train, je vais à la ___.","gare","banque","pharmacie","poste","gare","« une gare » là nhà ga."],
+["Je retire de l'argent à la ___.","banque","poste","gare","école","banque","« une banque » là ngân hàng."],
+["J'achète mes médicaments à la ___.","pharmacie","poste","banque","gare","pharmacie","« une pharmacie » là hiệu thuốc."],
+["J'envoie une lettre à la ___.","poste","pharmacie","banque","école","poste","« une poste » là bưu điện."],
+["J'attends le bus à l'___ de bus.","arrêt","station","gare","hôtel","arrêt","« un arrêt de bus » là trạm dừng xe buýt."],
+["Les enfants vont à l'___ le matin.","école","hôpital","poste","banque","école","« une école » là trường học."],
+["Le médecin travaille à l'___.","hôpital","école","gare","banque","hôpital","« un hôpital » là bệnh viện."],
+["Pour prendre le métro, entrez dans la ___ de métro.","station","arrêt","gare","poste","station","« une station de métro » là ga tàu điện ngầm."],
+["Pour aller à la gare, ___ tout droit.","allez","tournez","prenez","traversez","allez","« allez tout droit » nghĩa là hãy đi thẳng."],
+["Au carrefour, ___ à droite.","tournez","allez","continuez","arrêtez","tournez","« tournez à droite » nghĩa là hãy rẽ phải."],
+["___ la première rue à gauche.","Prenez","Tournez","Allez","Traversez","Prenez","« prenez la première rue » nghĩa là rẽ vào con phố đầu tiên."],
+["___ la rue : le musée est de l'autre côté.","Traversez","Tournez","Continuez","Arrêtez","Traversez","« traversez la rue » nghĩa là băng qua đường."],
+["___ tout droit pendant 200 mètres.","Continuez","Tournez","Prenez","Traversez","Continuez","« continuez » nghĩa là hãy tiếp tục đi."],
+["Le feu est rouge, ___-vous.","arrêtez","continuez","tournez","prenez","arrêtez","« arrêtez-vous » nghĩa là hãy dừng lại."],
+["La banque est à ___, sur votre droite.","droite","gauche","pied","vélo","droite","« à droite » nghĩa là ở bên phải."],
+["Tournez à ___, c'est la rue à votre gauche.","gauche","droite","pied","train","gauche","« à gauche » nghĩa là ở bên trái."],
+["Je vais au travail ___ pied.","à","en","de","au","à","Với « pied » và « vélo », dùng giới từ « à » : à pied, à vélo."],
+["Elle va à l'école ___ vélo.","à","en","au","de","à","« à vélo » nghĩa là bằng xe đạp."],
+["Nous partons à Nice ___ voiture.","en","à","au","de","en","Với phương tiện có động cơ, dùng « en » : en voiture."],
+["Ils voyagent ___ avion.","en","à","au","dans","en","« en avion » nghĩa là bằng máy bay."],
+["Tu prends le bus ou le ___ ?","métro","plan","carrefour","feu","métro","« le métro » là tàu điện ngầm."],
+["Sur le ___, je cherche la rue Victor Hugo.","plan","arrêt","feu","taxi","plan","« le plan » là bản đồ thành phố."],
+["Il y a un ___ rouge au carrefour.","feu","plan","taxi","vélo","feu","« un feu (rouge) » là đèn giao thông."],
+["Pour aller sur l'île, on prend le ___.","bateau","vélo","métro","train","bateau","« le bateau » là tàu thuyền, dùng để ra đảo."],
+["— Où est la poste ? — C'est ___ , à 100 mètres.","tout droit","loin","sous","entre","tout droit","« tout droit » nghĩa là thẳng phía trước."]
+],
+
+l11:[
+["Nous faisons un ___ à Paris en juillet.","voyage","billet","clé","guide","voyage","« un voyage » là chuyến đi, cuộc du lịch."],
+["En été, il y a beaucoup de ___ à Paris.","touristes","billets","clés","guides","touristes","« un touriste » là du khách."],
+["Nous allons ___ le musée du Louvre.","visiter","partir","arriver","réserver","visiter","« visiter » là tham quan một địa điểm."],
+["Le train ___ à huit heures de la gare de Lyon.","part","arrive","visite","séjourne","part","« partir » là khởi hành, rời đi."],
+["Le train ___ à Marseille à midi.","arrive","part","visite","réserve","arrive","« arriver » là đến nơi."],
+["J'achète un ___ de train pour Lyon.","billet","guide","clé","séjour","billet","« un billet » là vé tàu."],
+["Notre ___ de vacances, c'est la Bretagne.","destination","réservation","réception","clé","destination","« une destination » là điểm đến."],
+["Nous faisons une ___ guidée du vieux quartier.","visite","clé","réception","chambre","visite","« une visite » là chuyến tham quan."],
+["Nous passons un ___ de deux semaines en Provence.","séjour","billet","guide","bateau","séjour","« un séjour » là kỳ nghỉ, thời gian lưu trú."],
+["Le ___ nous explique l'histoire de la ville.","guide","billet","clé","balcon","guide","« un guide » là hướng dẫn viên."],
+["Nous dormons dans un ___ pendant notre voyage.","hôtel","musée","tableau","balcon","hôtel","« un hôtel » là khách sạn."],
+["Je voudrais réserver une chambre ___ , s'il vous plaît.","double","simple","sombre","petite","double","« une chambre double » là phòng đôi, có giường cho hai người."],
+["Une chambre ___ est pour une seule personne.","simple","double","grande","calme","simple","« une chambre simple » là phòng đơn."],
+["J'ai une ___ au nom de Nguyen.","réservation","réception","clé","visite","réservation","« une réservation » là sự đặt phòng."],
+["On prend la clé à la ___ de l'hôtel.","réception","chambre","cuisine","gare","réception","« la réception » là quầy lễ tân."],
+["Voici votre ___ , chambre 204.","clé","billet","guide","réservation","clé","« une clé » là chìa khóa phòng."],
+["Je voudrais ___ une chambre pour deux nuits.","réserver","visiter","partir","arriver","réserver","« réserver » là đặt trước."],
+["Nous ___ à l'hôtel pendant trois jours.","séjournons","visitons","partons","réservons","séjournons","« séjourner » là lưu trú tại một nơi."],
+["Lille est dans le ___ de la France.","nord","sud","est","ouest","nord","« le nord » là phía bắc."],
+["Marseille est dans le ___ de la France.","sud","nord","est","ouest","sud","« le sud » là phía nam."],
+["En été, on nage dans la ___.","mer","montagne","île","ville","mer","« la mer » là biển."],
+["On se repose et on bronze sur la ___.","plage","montagne","gare","chambre","plage","« une plage » là bãi biển."],
+["La Corse est une ___ de la Méditerranée.","île","plage","montagne","ville","île","« une île » là hòn đảo."],
+["Le Mont Blanc est une ___ très haute.","montagne","plage","île","mer","montagne","« une montagne » là ngọn núi."],
+["À l'arrivée à l'hôtel, la réceptionniste dit : « ___ ! »","Bienvenue","Bon voyage","À bientôt","Bon séjour","Bienvenue","« Bienvenue » là lời chào mừng khi khách đến."]
+],
+
+l12:[
+["___ est une grande ville du sud de la France.","Marseille","Lille","Strasbourg","Brest","Marseille","Marseille nằm ở miền nam nước Pháp."],
+["À Marseille, on se promène sur le ___.","Vieux-Port","couloir","balcon","garage","Vieux-Port","« le Vieux-Port » là Bến cảng Cũ, nơi nổi tiếng ở Marseille."],
+["La basilique Notre-Dame de la Garde est sur une ___.","colline","plage","gare","île","colline","« une colline » là ngọn đồi; nhà thờ nằm trên đồi cao."],
+["On visite une ___ du douzième siècle.","église","plage","gare","banque","église","« une église » là nhà thờ."],
+["Les bateaux sont dans le ___.","port","musée","salon","couloir","port","« un port » là cảng biển."],
+["Le Panier est un ___ historique de Marseille.","quartier","monument","port","ferry","quartier","« un quartier » là khu phố."],
+["On prend le ___ pour aller à l'île d'If.","ferry","métro","vélo","train","ferry","« un ferry » là phà chở khách qua biển."],
+["J'écris une ___ à mes parents.","carte postale","clé","réservation","billet","carte postale","« une carte postale » là bưu thiếp gửi từ nơi du lịch."],
+["J'achète un ___ pour ma sœur : un savon de Marseille.","souvenir","billet","guide","plan","souvenir","« un souvenir » là quà lưu niệm."],
+["Aujourd'hui, il fait ___ : le ciel est bleu.","beau","froid","sombre","cher","beau","« il fait beau » nghĩa là trời đẹp."],
+["Une carte postale commence souvent par : « ___ de Marseille ! »","Bonjour","Au revoir","Merci","Bienvenue","Bonjour","« Bonjour de Marseille ! » là lời chào mở đầu bưu thiếp."],
+["Nous ___ à Marseille pour une semaine.","sommes","allons","partons","arrivons","sommes","« Nous sommes à Marseille » nghĩa là chúng tôi đang ở Marseille."],
+["« Nous ___ le Vieux-Port et Notre-Dame de la Garde. »","visitons","partons","réservons","arrivons","visitons","« Nous visitons… » là chúng tôi đang tham quan…"],
+["À la fin d'une lettre amicale, on écrit : « ___ ! »","Gros bisous","Bon voyage","Bienvenue","Bonjour","Gros bisous","« Gros bisous » là lời kết thân mật, kiểu “thân ái”."],
+["« Je t'___ » est une formule amicale à la fin d'une lettre.","embrasse","visite","réserve","arrive","embrasse","« Je t'embrasse » là lời kết thân mật trong thư."],
+["Avant de partir en vacances, on dit à son ami : « ___ ! »","Bon voyage","Bienvenue","Bonjour","À demain","Bon voyage","« Bon voyage » là lời chúc trước chuyến đi."],
+["La ___ est la mer entre la France et l'Afrique du Nord.","Méditerranée","Manche","Seine","Loire","Méditerranée","« la Méditerranée » là Địa Trung Hải."],
+["À Marseille, on peut visiter les ___ , des petites baies entre les rochers.","calanques","gares","banques","écoles","calanques","« les calanques » là những vịnh đá nhỏ đặc trưng của Marseille."],
+["Le ___ de Marseille est un savon très célèbre.","savon","billet","guide","plan","savon","« le savon de Marseille » là xà phòng Marseille nổi tiếng."],
+["On marche sur la ___, la grande avenue de Marseille.","Canebière","colline","plage","gare","Canebière","« la Canebière » là đại lộ lớn nhất của Marseille."],
+["Notre-Dame de la Garde est une ___ , plus importante qu'une simple église.","basilique","plage","gare","île","basilique","« une basilique » là vương cung thánh đường."],
+["On prend une ___ du Vieux-Port avec son téléphone.","photo","clé","réservation","taille","photo","« une photo » là bức ảnh."],
+["« ___ ! » signifie qu'on se reverra bientôt.","À bientôt","Bonjour","Merci","Bienvenue","À bientôt","« À bientôt » nghĩa là hẹn gặp lại sớm."],
+["Un ___ visite la ville avec un guide.","touriste","vendeur","peintre","client","touriste","« un touriste » là du khách."],
+["Nous faisons une ___ sur le port, tranquillement.","promenade","réservation","exposition","caisse","promenade","« une promenade » là cuộc đi dạo."]
+]
+};
+
+/* ============================================================
+   2. KHỞI TẠO DỮ LIỆU
+   ============================================================ */
+
+const VOCAB = {};
+let ALLVOCAB = [];
+
+(function initVocab(){
+  LESSONS.forEach(l=>{
+    const raw = RAW_VOCAB[l.id] || [];
+    VOCAB[l.id] = raw.map((a,i)=>({
+      id: l.id + "-" + i,
+      lesson: l.id,
+      fr: a[0], vi: a[1], pos: a[2], cat: a[3], ipa: a[4], ex: a[5], exVi: a[6]
+    }));
+    ALLVOCAB = ALLVOCAB.concat(VOCAB[l.id]);
+  });
+})();
+
+let CTXQ = [];
+(function initCtx(){
+  LESSONS.forEach(l=>{
+    (RAW_CTX[l.id] || []).forEach((a,i)=>{
+      CTXQ.push({
+        id: "c-" + l.id + "-" + i,
+        type: "context",
+        lesson: l.id,
+        prompt: a[0],
+        options: [a[1], a[2], a[3], a[4]],
+        correct: a[5],
+        explain: a[6]
+      });
+    });
+  });
+})();
+
+/* ---- PRNG tất định ---- */
+function hashStr(s){
+  let h = 2166136261;
+  for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function mulberry32(a){
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function shuffleArr(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    const t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+
+/* ---- Sinh câu hỏi chọn nghĩa từ kho từ vựng ---- */
+function addDistinct(pool, rnd, out, used, need){
+  const copy = pool.slice();
+  for(let i=copy.length-1;i>0;i--){
+    const j = Math.floor(rnd()*(i+1));
+    const t = copy[i]; copy[i] = copy[j]; copy[j] = t;
+  }
+  for(const it of copy){
+    if(out.length >= need) break;
+    if(used.has(it.vi)) continue;
+    used.add(it.vi);
+    out.push(it);
+  }
+}
+
+let MEANQ = [];
+(function buildMeaningQuestions(){
+  ALLVOCAB.forEach(v=>{
+    const need = 3;
+    const out = [];
+    const used = new Set([v.vi]);
+    const rnd = mulberry32(hashStr(v.id));
+    addDistinct(ALLVOCAB.filter(x=>x.id!==v.id && x.cat===v.cat), rnd, out, used, need);
+    if(out.length < need){
+      const rnd2 = mulberry32(hashStr(v.id + "#b"));
+      addDistinct(ALLVOCAB.filter(x=>x.id!==v.id), rnd2, out, used, need);
+    }
+    if(out.length < need) return;
+    MEANQ.push({
+      id: "m-" + v.id,
+      type: "meaning",
+      lesson: v.lesson,
+      fr: v.fr,
+      prompt: "« " + v.fr + " » có nghĩa là gì?",
+      options: [v.vi].concat(out.map(o=>o.vi)),
+      correct: v.vi,
+      explain: "« " + v.fr + " » (" + v.pos + ") nghĩa là “" + v.vi + "”. Ví dụ: " + v.ex + " — " + v.exVi
+    });
+  });
+})();
+
+const ALLQ = MEANQ.concat(CTXQ);
+
+/* ============================================================
+   3. LƯU TIẾN ĐỘ (localStorage)
+   ============================================================ */
+
+const STORE_KEY = "frenchA1_taxi_progress_v1";
+
+function defaultProgress(){
+  const units = {};
+  LESSONS.forEach(l=>{ units[l.id] = {a:0, c:0}; });
+  return {
+    viewed:{}, learned:{}, needReview:{},
+    stats:{ meaning:{a:0,c:0}, context:{a:0,c:0} },
+    units: units,
+    mistakes:{},
+    exercises:0,
+    lastStudy:null
+  };
+}
+
+let P = defaultProgress();
+
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    if(!raw) return;
+    const saved = JSON.parse(raw);
+    const base = defaultProgress();
+    base.viewed = saved.viewed || {};
+    base.learned = saved.learned || {};
+    base.needReview = saved.needReview || {};
+    base.mistakes = saved.mistakes || {};
+    base.exercises = saved.exercises || 0;
+    base.lastStudy = saved.lastStudy || null;
+    if(saved.stats){
+      base.stats.meaning = saved.stats.meaning || {a:0,c:0};
+      base.stats.context = saved.stats.context || {a:0,c:0};
+    }
+    if(saved.units){
+      LESSONS.forEach(l=>{
+        if(saved.units[l.id]) base.units[l.id] = {a: saved.units[l.id].a||0, c: saved.units[l.id].c||0};
+      });
+    }
+    P = base;
+  }catch(e){
+    console.warn("Không đọc được tiến độ, dùng dữ liệu mới.", e);
+    P = defaultProgress();
+  }
+}
+
+function saveProgress(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify(P));
+  }catch(e){
+    console.warn("Không lưu được tiến độ (localStorage).", e);
+  }
+}
+
+/* ============================================================
+   4. TIỆN ÍCH
+   ============================================================ */
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function lessonLabel(id){
+  const l = LESSONS.find(x=>x.id===id);
+  return l ? ("Leçon " + l.num + " – " + l.title) : "Tổng hợp";
+}
+function lessonShort(id){
+  const l = LESSONS.find(x=>x.id===id);
+  return l ? ("Leçon " + l.num) : "Tổng hợp";
+}
+function pct(a,b){ return b>0 ? Math.round(a*100/b) : 0; }
+
+/* ============================================================
+   5. ĐIỀU HƯỚNG
+   ============================================================ */
+
+function showView(name){
+  document.querySelectorAll(".view").forEach(v=>{
+    v.classList.toggle("active", v.id === "view-" + name);
+  });
+  document.querySelectorAll("#mainnav button").forEach(b=>{
+    b.classList.toggle("active", b.dataset.view === name);
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+  if(name === "home") renderHome();
+  if(name === "lessons") renderVocab();
+  if(name === "review") renderReview();
+  if(name === "progress") renderProgress();
+}
+
+document.getElementById("mainnav").addEventListener("click", e=>{
+  const b = e.target.closest("button[data-view]");
+  if(b) showView(b.dataset.view);
+});
+document.addEventListener("click", e=>{
+  const b = e.target.closest("[data-goto]");
+  if(b) showView(b.dataset.goto);
+});
+
+/* ============================================================
+   6. TRANG CHỦ
+   ============================================================ */
+
+function totalLearned(){ return Object.keys(P.learned).length; }
+function totalNeed(){ return Object.keys(P.needReview).length; }
+
+function renderHome(){
+  const st = document.getElementById("homeStats");
+  const totalA = P.stats.meaning.a + P.stats.context.a;
+  const totalC = P.stats.meaning.c + P.stats.context.c;
+  st.innerHTML =
+    statBox(ALLVOCAB.length, "Từ / cụm từ trong kho") +
+    statBox(totalLearned(), "Từ đã học") +
+    statBox(totalNeed(), "Từ cần ôn lại") +
+    statBox(totalA ? pct(totalC,totalA) + "%" : "—", "Tỉ lệ trả lời đúng") +
+    statBox(Object.keys(P.mistakes).length, "Câu đang trả lời sai") +
+    statBox(P.exercises, "Lượt bài tập đã hoàn thành");
+
+  const lg = document.getElementById("homeLessons");
+  lg.innerHTML = LESSONS.map(l=>{
+    const items = VOCAB[l.id];
+    const learned = items.filter(v=>P.learned[v.id]).length;
+    const p = pct(learned, items.length);
+    const u = P.units[l.id];
+    const acc = u.a ? pct(u.c, u.a) + "% đúng" : "chưa làm bài tập";
+    return '<div class="lesson-card">' +
+      '<div class="lt">Leçon ' + l.num + ' – ' + esc(l.title) + '</div>' +
+      '<div class="ls">' + esc(l.vi) + ' · ' + items.length + ' mục từ vựng</div>' +
+      '<div class="bar"><i style="width:' + p + '%"></i></div>' +
+      '<div class="ls">Đã học: ' + learned + '/' + items.length + ' (' + p + '%) · ' + acc + '</div>' +
+      '<div class="row" style="margin-top:8px">' +
+        '<button class="btn small" data-goto="lessons" data-lesson="' + l.id + '">Học từ vựng</button>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  lg.querySelectorAll("[data-lesson]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.getElementById("vocabLesson").value = btn.dataset.lesson;
+      vocabFilter.lesson = btn.dataset.lesson;
+      showView("lessons");
+    });
+  });
+}
+
+function statBox(num, lbl){
+  return '<div class="stat"><div class="num">' + esc(num) + '</div><div class="lbl">' + esc(lbl) + '</div></div>';
+}
+
+/* ============================================================
+   7. BÀI HỌC TỪ VỰNG
+   ============================================================ */
+
+const vocabFilter = {lesson:"all", status:"all", search:""};
+
+(function initLessonSelects(){
+  const sel = document.getElementById("vocabLesson");
+  LESSONS.forEach(l=>{
+    const o = document.createElement("option");
+    o.value = l.id;
+    o.textContent = "Leçon " + l.num + " – " + l.title;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", ()=>{ vocabFilter.lesson = sel.value; renderVocab(); });
+
+  const sel2 = document.getElementById("vocabStatus");
+  sel2.addEventListener("change", ()=>{ vocabFilter.status = sel2.value; renderVocab(); });
+
+  const search = document.getElementById("vocabSearch");
+  search.addEventListener("input", ()=>{ vocabFilter.search = search.value.trim().toLowerCase(); renderVocab(); });
+
+  // scope selects for quizzes
+  ["mScope","cScope"].forEach(id=>{
+    const s = document.getElementById(id);
+    const o0 = document.createElement("option");
+    o0.value = "all"; o0.textContent = "Tất cả (Leçons 7–12)";
+    s.appendChild(o0);
+    LESSONS.forEach(l=>{
+      const o = document.createElement("option");
+      o.value = l.id;
+      o.textContent = "Leçon " + l.num + " – " + l.title;
+      s.appendChild(o);
+    });
+  });
+
+  // reset unit select
+  const rs = document.getElementById("resetUnit");
+  LESSONS.forEach(l=>{
+    const o = document.createElement("option");
+    o.value = l.id;
+    o.textContent = "Leçon " + l.num;
+    rs.appendChild(o);
+  });
+})();
+
+function renderVocab(){
+  const list = document.getElementById("vocabList");
+  const items = ALLVOCAB.filter(v=>{
+    if(vocabFilter.lesson !== "all" && v.lesson !== vocabFilter.lesson) return false;
+    if(vocabFilter.status === "learned" && !P.learned[v.id]) return false;
+    if(vocabFilter.status === "review" && !P.needReview[v.id]) return false;
+    if(vocabFilter.status === "new" && (P.learned[v.id] || P.needReview[v.id])) return false;
+    if(vocabFilter.search){
+      const s = vocabFilter.search;
+      if(!(v.fr.toLowerCase().includes(s) || v.vi.toLowerCase().includes(s) || v.cat.toLowerCase().includes(s))) return false;
+    }
+    return true;
+  });
+
+  document.getElementById("vocabCount").textContent =
+    "Hiển thị " + items.length + " mục" +
+    (vocabFilter.lesson === "all" ? "" : " · " + lessonLabel(vocabFilter.lesson));
+
+  if(items.length === 0){
+    list.innerHTML = '<div class="empty">Không tìm thấy từ vựng phù hợp. Hãy thử đổi bộ lọc hoặc từ khoá khác.</div>';
+    return;
+  }
+
+  list.innerHTML = items.map(v=>{
+    const learned = !!P.learned[v.id];
+    const need = !!P.needReview[v.id];
+    return '<div class="vcard" data-id="' + v.id + '">' +
+      '<div class="fr">' + esc(v.fr) + '<span class="badge">' + esc(v.pos) + '</span>' +
+        (learned ? '<span class="badge ok">Đã học</span>' : '') +
+        (need ? '<span class="badge warn">Cần ôn</span>' : '') +
+      '</div>' +
+      '<div class="vi">' + esc(v.vi) + '</div>' +
+      '<div class="ipa">' + esc(v.ipa) + '</div>' +
+      '<div class="cat">' + esc(lessonShort(v.lesson)) + ' · ' + esc(v.cat) + '</div>' +
+      '<div class="example hidden" data-role="example">' +
+        '<div class="fr-ex">« ' + esc(v.ex) + ' »</div>' +
+        '<div>' + esc(v.exVi) + '</div>' +
+      '</div>' +
+      '<div class="actions">' +
+        '<button class="btn small" data-act="ex">Xem ví dụ</button>' +
+        '<button class="btn small" data-act="learned">' + (learned ? 'Bỏ đã học' : 'Đã học') + '</button>' +
+        '<button class="btn small" data-act="review">' + (need ? 'Bỏ khỏi ôn tập' : 'Cần ôn lại') + '</button>' +
+        '<button class="btn small" data-act="add">Thêm vào danh sách ôn tập</button>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  list.querySelectorAll(".vcard").forEach(card=>{
+    const id = card.dataset.id;
+    card.addEventListener("click", e=>{
+      const btn = e.target.closest("button[data-act]");
+      if(!btn) return;
+      const act = btn.dataset.act;
+      if(act === "ex"){
+        const ex = card.querySelector('[data-role="example"]');
+        ex.classList.toggle("hidden");
+        btn.textContent = ex.classList.contains("hidden") ? "Xem ví dụ" : "Ẩn ví dụ";
+        P.viewed[id] = true; saveProgress();
+      } else if(act === "learned"){
+        if(P.learned[id]) delete P.learned[id];
+        else { P.learned[id] = true; P.viewed[id] = true; delete P.needReview[id]; }
+        saveProgress(); renderVocab();
+      } else if(act === "review"){
+        if(P.needReview[id]) delete P.needReview[id];
+        else { P.needReview[id] = true; P.viewed[id] = true; delete P.learned[id]; }
+        saveProgress(); renderVocab();
+      } else if(act === "add"){
+        P.needReview[id] = true; P.viewed[id] = true;
+        saveProgress(); renderVocab();
+      }
+    });
+  });
+}
+
+/* ============================================================
+   8. ĐỘNG CƠ BÀI TẬP
+   ============================================================ */
+
+function prepQ(q){
+  const opts = shuffleArr(q.options.slice());
+  return { ref:q, options:opts, correctIndex:opts.indexOf(q.correct) };
+}
+
+const sessions = {};
+
+function newSession(cfg){
+  const pool = shuffleArr(cfg.pool.slice());
+  const count = Math.min(cfg.count, pool.length);
+  const prepared = pool.slice(0, count).map(prepQ);
+  return {
+    containerId: cfg.containerId,
+    title: cfg.title,
+    mode: cfg.mode,          // "practice" | "test"
+    backView: cfg.backView,
+    questions: prepared,
+    idx: 0,
+    answers: [],
+    finished: false,
+    answered: false
+  };
+}
+
+function startSession(containerId, cfg){
+  sessions[containerId] = newSession(Object.assign({containerId:containerId}, cfg));
+  renderSession(containerId);
+}
+
+function renderSession(containerId){
+  const s = sessions[containerId];
+  if(!s) return;
+  const box = document.getElementById(containerId);
+  if(!box) return;
+
+  if(s.finished){ renderSessionResult(containerId); return; }
+
+  const q = s.questions[s.idx];
+  const r = q.ref;
+
+  let html = '<div class="card">';
+  html += '<div class="progressline">' + esc(s.title) + ' · ' + (s.mode === "test" ? "Chế độ kiểm tra" : "Chế độ luyện tập") + '</div>';
+  html += '<div class="bar"><i style="width:' + pct(s.idx, s.questions.length) + '%"></i></div>';
+  html += '<div class="qmeta">Câu ' + (s.idx+1) + '/' + s.questions.length + ' · ' + esc(lessonShort(r.lesson)) + '</div>';
+  html += '<div class="qprompt">' + formatPrompt(r) + '</div>';
+  html += '<div class="options">';
+  q.options.forEach((opt,i)=>{
+    html += '<button class="opt" data-i="' + i + '"><span class="key">' + "ABCD"[i] + '</span><span>' + esc(opt) + '</span></button>';
+  });
+  html += '</div>';
+  html += '<div id="' + containerId + '-fb"></div>';
+  html += '<div class="row" style="margin-top:12px">';
+  html += '<button class="btn primary" id="' + containerId + '-next" style="display:none">Câu tiếp theo →</button>';
+  html += '<button class="btn" id="' + containerId + '-quit">Kết thúc bài</button>';
+  html += '</div>';
+  html += '</div>';
+  box.innerHTML = html;
+
+  box.querySelectorAll(".opt").forEach(btn=>{
+    btn.addEventListener("click", ()=> answerSession(containerId, parseInt(btn.dataset.i,10)));
+  });
+  const nextBtn = document.getElementById(containerId + "-next");
+  nextBtn.addEventListener("click", ()=> nextQuestion(containerId));
+  document.getElementById(containerId + "-quit").addEventListener("click", ()=>{
+    if(confirm("Bạn muốn kết thúc bài tập này?")){
+      s.finished = true;
+      finalizeSession(containerId);
+    }
+  });
+}
+
+function formatPrompt(r){
+  if(r.type === "context"){
+    return esc(r.prompt).replace(/___/g, '<span class="blank">______</span>');
+  }
+  return esc(r.prompt);
+}
+
+function answerSession(containerId, choice){
+  const s = sessions[containerId];
+  if(!s || s.answered) return;
+  s.answered = true;
+  const q = s.questions[s.idx];
+  const r = q.ref;
+  const ok = (choice === q.correctIndex);
+  s.answers.push({ref:r, chosen:s.q.options ? null : q.options[choice], ok:ok});
+
+  recordAnswer(r, ok);
+
+  const box = document.getElementById(containerId);
+  const optButtons = box.querySelectorAll(".opt");
+  optButtons.forEach((b,i)=>{
+    b.disabled = true;
+    if(i === q.correctIndex) b.classList.add("correct");
+    else if(i === choice) b.classList.add("wrong");
+  });
+
+  if(s.mode === "practice"){
+    const fb = document.getElementById(containerId + "-fb");
+    fb.innerHTML = '<div class="feedback ' + (ok ? "ok" : "bad") + '">' +
+      '<span class="tag">' + (ok ? "✅ Đúng" : "❌ Chưa đúng") + '</span>' +
+      '<div>' + esc(r.explain) + '</div>' +
+      (ok ? '' : '<div style="margin-top:6px">Đáp án đúng: <strong>' + esc(r.correct) + '</strong></div>') +
+      '</div>';
+    const nextBtn = document.getElementById(containerId + "-next");
+    nextBtn.style.display = "inline-block";
+    nextBtn.textContent = (s.idx + 1 >= s.questions.length) ? "Xem kết quả" : "Câu tiếp theo →";
+  } else {
+    setTimeout(()=> nextQuestion(containerId), 250);
+  }
+}
+
+function nextQuestion(containerId){
+  const s = sessions[containerId];
+  if(!s) return;
+  s.idx++;
+  s.answered = false;
+  if(s.idx >= s.questions.length){
+    s.finished = true;
+    finalizeSession(containerId);
+  } else {
+    renderSession(containerId);
+  }
+}
+
+function finalizeSession(containerId){
+  const s = sessions[containerId];
+  P.exercises = (P.exercises || 0) + 1;
+  saveProgress();
+  renderSessionResult(containerId);
+}
+
+function renderSessionResult(containerId){
+  const s = sessions[containerId];
+  const box = document.getElementById(containerId);
+  const total = s.answers.length;
+  const good = s.answers.filter(a=>a.ok).length;
+  const score = total ? Math.round(good*100/total) : 0;
+
+  let html = '<div class="card">';
+  html += '<h2>Kết quả bài tập</h2>';
+  html += '<div class="result-big">' + good + '/' + total + ' · ' + score + '%</div>';
+  html += '<p class="muted">' + (score >= 80 ? "Rất tốt! Bạn đã nắm vững nội dung này." :
+      (score >= 50 ? "Khá tốt. Hãy xem lại các câu sai bên dưới." :
+      "Hãy ôn lại từ vựng của bài rồi làm lại nhé.")) + '</p>';
+
+  const wrongs = s.answers.filter(a=>!a.ok);
+  if(wrongs.length){
+    html += '<div class="divider"></div><h3>Các câu trả lời sai</h3>';
+    html += wrongs.map(a=>{
+      const r = a.ref;
+      return '<div class="wrongitem">' +
+        '<div class="qq">' + formatPrompt(r) + '</div>' +
+        '<div class="ans bad">Bạn chọn: ' + esc(a.chosen || "(bỏ trống)") + '</div>' +
+        '<div class="ans ok">Đáp án đúng: ' + esc(r.correct) + '</div>' +
+        '<div class="muted" style="margin-top:4px">' + esc(r.explain) + '</div>' +
+        '</div>';
+    }).join("");
+  } else {
+    html += '<div class="empty" style="margin-top:12px">🎉 Không có câu sai nào. Tuyệt vời!</div>';
+  }
+
+  html += '<div class="row" style="margin-top:14px">';
+  html += '<button class="btn primary" id="' + containerId + '-again">Làm lại</button>';
+  html += '<button class="btn" id="' + containerId + '-clear">Xoá kết quả</button>';
+  html += '</div>';
+  html += '</div>';
+  box.innerHTML = html;
+
+  document.getElementById(containerId + "-again").addEventListener("click", ()=>{
+    const old = sessions[containerId];
+    startSession(containerId, old.replayCfg);
+  });
+  document.getElementById(containerId + "-clear").addEventListener("click", ()=>{
+    box.innerHTML = "";
+    delete sessions[containerId];
+  });
+}
+
+/* ---- Ghi nhận kết quả ---- */
+function recordAnswer(r, ok){
+  const st = P.stats[r.type] || P.stats.meaning;
+  st.a++; if(ok) st.c++;
+
+  if(!P.units[r.lesson]) P.units[r.lesson] = {a:0,c:0};
+  P.units[r.lesson].a++;
+  if(ok) P.units[r.lesson].c++;
+
+  if(!ok){
+    const m = P.mistakes[r.id] || {
+      id:r.id, type:r.type, lesson:r.lesson, wrong:0, streak:0,
+      prompt:r.prompt, options:r.options, correct:r.correct,
+      explain:r.explain, fr:r.fr || null, ts:0
+    };
+    m.wrong = (m.wrong||0) + 1;
+    m.streak = 0;
+    m.ts = Date.now();
+    P.mistakes[r.id] = m;
+  } else if(P.mistakes[r.id]){
+    P.mistakes[r.id].streak = (P.mistakes[r.id].streak||0) + 1;
+    if(P.mistakes[r.id].streak >= 2) delete P.mistakes[r.id];
+  }
+
+  P.lastStudy = new Date().toISOString();
+  saveProgress();
+}
+
+/* ---- Khởi động bài tập chọn nghĩa ---- */
+document.getElementById("mStart").addEventListener("click", ()=>{
+  const scope = document.getElementById("mScope").value;
+  const count = parseInt(document.getElementById("mCount").value, 10);
+  const mode = document.getElementById("mMode").value;
+  const pool = MEANQ.filter(q=> scope === "all" ? true : q.lesson === scope);
+  if(pool.length === 0){ alert("Không có câu hỏi cho phạm vi này."); return; }
+  const cfg = {
+    pool: pool, count: count, mode: mode,
+    title: "Chọn nghĩa tiếng Việt" + (scope === "all" ? " – Tổng hợp" : " – " + lessonLabel(scope)),
+    backView: "meaning"
+  };
+  startSession("mQuiz", cfg);
+  sessions["mQuiz"].replayCfg = cfg;
+  document.getElementById("mQuiz").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+/* ---- Khởi động bài tập ngữ cảnh ---- */
+document.getElementById("cStart").addEventListener("click", ()=>{
+  const scope = document.getElementById("cScope").value;
+  const count = parseInt(document.getElementById("cCount").value, 10);
+  const mode = document.getElementById("cMode").value;
+  const pool = CTXQ.filter(q=> scope === "all" ? true : q.lesson === scope);
+  if(pool.length === 0){ alert("Không có câu hỏi cho phạm vi này."); return; }
+  const cfg = {
+    pool: pool, count: count, mode: mode,
+    title: "Từ vựng theo ngữ cảnh" + (scope === "all" ? " – Tổng hợp" : " – " + lessonLabel(scope)),
+    backView: "context"
+  };
+  startSession("cQuiz", cfg);
+  sessions["cQuiz"].replayCfg = cfg;
+  document.getElementById("cQuiz").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+/* ============================================================
+   9. ÔN TẬP
+   ============================================================ */
+
+let reviewTab = "learned";
+
+document.getElementById("reviewTabs").addEventListener("click", e=>{
+  const b = e.target.closest("button[data-tab]");
+  if(!b) return;
+  reviewTab = b.dataset.tab;
+  document.querySelectorAll("#reviewTabs button").forEach(x=>x.classList.toggle("active", x === b));
+  renderReview();
+});
+
+function renderReview(){
+  const body = document.getElementById("reviewBody");
+  if(reviewTab === "learned") renderWordList(body, "learned");
+  else if(reviewTab === "need") renderWordList(body, "need");
+  else if(reviewTab === "wrong") renderWrongList(body);
+  else renderRandom(body);
+}
+
+function renderWordList(body, kind){
+  const ids = kind === "learned" ? Object.keys(P.learned) : Object.keys(P.needReview);
+  const items = ALLVOCAB.filter(v=> ids.indexOf(v.id) !== -1);
+  if(items.length === 0){
+    body.innerHTML = '<div class="empty">' +
+      (kind === "learned"
+        ? 'Bạn chưa đánh dấu từ nào là “Đã học”. Hãy vào phần Bài học từ vựng và đánh dấu nhé.'
+        : 'Chưa có từ nào trong danh sách “Cần ôn lại”.') +
+      '</div>';
+    return;
+  }
+  let html = '<p class="muted">' + items.length + ' mục</p><div class="vocab-list">';
+  html += items.map(v=>(
+    '<div class="vcard">' +
+      '<div class="fr">' + esc(v.fr) + '<span class="badge">' + esc(v.pos) + '</span></div>' +
+      '<div class="vi">' + esc(v.vi) + '</div>' +
+      '<div class="ipa">' + esc(v.ipa) + '</div>' +
+      '<div class="cat">' + esc(lessonShort(v.lesson)) + ' · ' + esc(v.cat) + '</div>' +
+      '<div class="example"><div class="fr-ex">« ' + esc(v.ex) + ' »</div><div>' + esc(v.exVi) + '</div></div>' +
+      '<div class="actions">' +
+        '<button class="btn small" data-rm="' + v.id + '" data-kind="' + kind + '">Bỏ khỏi danh sách</button>' +
+      '</div>' +
+    '</div>'
+  )).join("");
+  html += '</div>';
+  body.innerHTML = html;
+
+  body.querySelectorAll("[data-rm]").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const id = b.dataset.rm;
+      if(b.dataset.kind === "learned") delete P.learned[id];
+      else delete P.needReview[id];
+      saveProgress(); renderReview();
+    });
+  });
+}
+
+function renderWrongList(body){
+  const keys = Object.keys(P.mistakes);
+  if(keys.length === 0){
+    body.innerHTML = '<div class="empty">Chưa có câu trả lời sai nào được ghi lại. Hãy làm bài tập để hệ thống theo dõi lỗi của bạn.</div>';
+    return;
+  }
+  const list = keys.map(k=>P.mistakes[k]).sort((a,b)=>(b.ts||0)-(a.ts||0));
+
+  let html = '<div class="row" style="margin-bottom:12px">' +
+    '<button class="btn primary" id="retryAllWrong">Ôn tập lại tất cả (' + list.length + ' câu)</button>' +
+    '<button class="btn danger" id="clearWrong">Xoá danh sách lỗi</button>' +
+    '</div>';
+
+  html += list.map(m=>(
+    '<div class="wrongitem">' +
+      '<div class="qmeta">' + esc(lessonShort(m.lesson)) + ' · ' + (m.type === "meaning" ? "Chọn nghĩa" : "Ngữ cảnh") + ' · Số lần sai: ' + (m.wrong||1) + '</div>' +
+      '<div class="qq">' + formatPrompt(m) + '</div>' +
+      '<div class="ans ok">Đáp án đúng: ' + esc(m.correct) + '</div>' +
+      '<div class="muted" style="margin-top:4px">' + esc(m.explain) + '</div>' +
+      '<div class="actions" style="margin-top:8px">' +
+        '<button class="btn small" data-retry="' + esc(m.id) + '">Làm lại câu này</button>' +
+        '<button class="btn small" data-forget="' + esc(m.id) + '">Xoá khỏi danh sách</button>' +
+      '</div>' +
+      '<div id="retryBox-' + esc(m.id) + '"></div>' +
+    '</div>'
+  )).join("");
+
+  body.innerHTML = html;
+
+  document.getElementById("retryAllWrong").addEventListener("click", ()=>{
+    const pool = list.map(m=>({
+      id:m.id, type:m.type, lesson:m.lesson,
+      prompt:m.prompt, options:m.options, correct:m.correct, explain:m.explain, fr:m.fr
+    }));
+    const cfg = { pool: pool, count: pool.length, mode:"practice", title:"Ôn tập câu trả lời sai", backView:"review" };
+    const holder = document.createElement("div");
+    holder.id = "wrongQuiz";
+    body.insertBefore(holder, body.firstChild);
+    startSession("wrongQuiz", cfg);
+    sessions["wrongQuiz"].replayCfg = cfg;
+    holder.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  document.getElementById("clearWrong").addEventListener("click", ()=>{
+    if(confirm("Xoá toàn bộ danh sách câu trả lời sai?")){
+      P.mistakes = {}; saveProgress(); renderReview();
+    }
+  });
+
+  body.querySelectorAll("[data-forget]").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      delete P.mistakes[b.dataset.forget];
+      saveProgress(); renderReview();
+    });
+  });
+
+  body.querySelectorAll("[data-retry]").forEach(b=>{
+    b.addEventListener("click", ()=>{
+      const m = P.mistakes[b.dataset.retry];
+      if(!m) return;
+      const cfg = {
+        pool: [{id:m.id, type:m.type, lesson:m.lesson, prompt:m.prompt, options:m.options, correct:m.correct, explain:m.explain, fr:m.fr}],
+        count: 1, mode: "practice", title: "Làm lại câu sai", backView: "review"
+      };
+      const holderId = "retryBox-" + m.id;
+      startSession(holderId, cfg);
+      sessions[holderId].replayCfg = cfg;
+    });
+  });
+}
+
+function renderRandom(body){
+  body.innerHTML =
+    '<p class="muted">Ôn tập ngẫu nhiên các câu hỏi từ cả 6 bài, cả hai dạng bài tập.</p>' +
+    '<div class="row" style="margin-top:10px">' +
+      '<label class="field">Số câu<select id="rndCount">' +
+        '<option value="10">10 câu</option>' +
+        '<option value="20" selected>20 câu</option>' +
+        '<option value="30">30 câu</option>' +
+        '<option value="50">50 câu</option>' +
+      '</select></label>' +
+      '<label class="field">Dạng<select id="rndType">' +
+        '<option value="all">Cả hai dạng</option>' +
+        '<option value="meaning">Chỉ chọn nghĩa</option>' +
+        '<option value="context">Chỉ ngữ cảnh</option>' +
+      '</select></label>' +
+      '<button class="btn primary" id="rndStart" style="align-self:flex-end">Bắt đầu ôn tập</button>' +
+    '</div>' +
+    '<div id="rndQuiz" style="margin-top:14px"></div>';
+
+  document.getElementById("rndStart").addEventListener("click", ()=>{
+    const n = parseInt(document.getElementById("rndCount").value,10);
+    const t = document.getElementById("rndType").value;
+    let pool = ALLQ;
+    if(t === "meaning") pool = MEANQ;
+    if(t === "context") pool = CTXQ;
+    const cfg = { pool: pool, count: n, mode: "practice", title: "Ôn tập ngẫu nhiên", backView: "review" };
+    startSession("rndQuiz", cfg);
+    sessions["rndQuiz"].replayCfg = cfg;
+  });
+}
+
+/* ============================================================
+   10. TIẾN ĐỘ
+   ============================================================ */
+
+function renderProgress(){
+  const totalA = P.stats.meaning.a + P.stats.context.a;
+  const totalC = P.stats.meaning.c + P.stats.context.c;
+
+  document.getElementById("progressStats").innerHTML =
+    statBox(totalLearned() + "/" + ALLVOCAB.length, "Từ đã đánh dấu học") +
+    statBox(totalNeed(), "Từ cần ôn lại") +
+    statBox(totalA, "Câu đã làm") +
+    statBox(totalA ? pct(totalC,totalA) + "%" : "—", "Tỉ lệ đúng chung") +
+    statBox(P.stats.meaning.a ? pct(P.stats.meaning.c,P.stats.meaning.a) + "%" : "—", "Đúng – chọn nghĩa") +
+    statBox(P.stats.context.a ? pct(P.stats.context.c,P.stats.context.a) + "%" : "—", "Đúng – ngữ cảnh") +
+    statBox(Object.keys(P.mistakes).length, "Câu đang sai") +
+    statBox(P.lastStudy ? new Date(P.lastStudy).toLocaleDateString("vi-VN") : "—", "Ngày học gần nhất");
+
+  const up = document.getElementById("unitProgress");
+  up.innerHTML = LESSONS.map(l=>{
+    const items = VOCAB[l.id];
+    const learned = items.filter(v=>P.learned[v.id]).length;
+    const u = P.units[l.id];
+    const acc = u.a ? pct(u.c,u.a) : 0;
+    return '<div style="margin-bottom:16px">' +
+      '<div class="kv"><span>Leçon ' + l.num + ' – ' + esc(l.title) + '</span>' +
+        '<span>' + learned + '/' + items.length + ' từ · ' + u.a + ' câu · ' + acc + '% đúng</span></div>' +
+      '<div class="bar"><i style="width:' + pct(learned, items.length) + '%"></i></div>' +
+      '<div class="muted" style="font-size:.82rem">Từ đã học: ' + pct(learned, items.length) + '% · Độ chính xác bài tập: ' + acc + '%</div>' +
+      '</div>';
+  }).join("");
+
+  const rm = document.getElementById("recentMistakes");
+  const keys = Object.keys(P.mistakes);
+  if(keys.length === 0){
+    rm.innerHTML = '<div class="empty">Chưa có lỗi nào được ghi lại.</div>';
+  } else {
+    const list = keys.map(k=>P.mistakes[k]).sort((a,b)=>(b.ts||0)-(a.ts||0)).slice(0,10);
+    rm.innerHTML = list.map(m=>(
+      '<div class="wrongitem">' +
+        '<div class="qmeta">' + esc(lessonShort(m.lesson)) + ' · ' + (m.type === "meaning" ? "Chọn nghĩa" : "Ngữ cảnh") + '</div>' +
+        '<div class="qq">' + formatPrompt(m) + '</div>' +
+        '<div class="ans ok">Đáp án đúng: ' + esc(m.correct) + '</div>' +
+      '</div>'
+    )).join("");
+  }
+}
+
+document.getElementById("resetUnitBtn").addEventListener("click", ()=>{
+  const id = document.getElementById("resetUnit").value;
+  const l = LESSONS.find(x=>x.id === id);
+  if(!confirm("Xoá tiến độ của Leçon " + l.num + "? Hành động này không thể hoàn tác.")) return;
+  P.units[id] = {a:0,c:0};
+  VOCAB[id].forEach(v=>{ delete P.learned[v.id]; delete P.needReview[v.id]; delete P.viewed[v.id]; });
+  Object.keys(P.mistakes).forEach(k=>{ if(P.mistakes[k].lesson === id) delete P.mistakes[k]; });
+  saveProgress(); renderProgress();
+  alert("Đã xoá tiến độ Leçon " + l.num + ".");
+});
+
+document.getElementById("resetAllBtn").addEventListener("click", ()=>{
+  if(!confirm("Xoá TOÀN BỘ tiến độ học tập? Hành động này không thể hoàn tác.")) return;
+  if(!confirm("Bạn chắc chắn chứ? Tất cả từ đã học, điểm số và danh sách lỗi sẽ bị xoá.")) return;
+  P = defaultProgress();
+  saveProgress();
+  renderProgress();
+  renderHome();
+  alert("Đã xoá toàn bộ tiến độ.");
+});
+
+/* ============================================================
+   11. KHỞI ĐỘNG
+   ============================================================ */
+
+(function init(){
+  loadProgress();
+  renderHome();
+  renderVocab();
+  renderProgress();
+})();
+</script>
+</body>
+</html>
