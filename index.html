@@ -153,12 +153,80 @@
   .kv span:last-child{font-weight:700;color:var(--blue-dark)}
   .result-big{font-size:1.7rem;font-weight:900;color:var(--blue-dark)}
   .pill{display:inline-block;font-size:.78rem;padding:3px 9px;border-radius:999px;background:var(--blue-light);color:var(--blue-dark);font-weight:700;margin-right:6px}
+
+  /* ============ FLASHCARD STYLES ============ */
+  .fc-wrap{max-width:640px;margin:0 auto;perspective:1600px}
+  .flashcard{
+    position:relative;width:100%;min-height:340px;
+    transform-style:preserve-3d;
+    transition:transform .55s cubic-bezier(.4,.2,.2,1);
+    cursor:pointer;
+    outline:none;
+  }
+  .flashcard:focus-visible{box-shadow:0 0 0 3px #9dc0f5;border-radius:20px}
+  .flashcard.flipped{transform:rotateY(180deg)}
+  .fc-face{
+    position:absolute;inset:0;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+    background:#fff;border:1px solid #e6effb;border-radius:20px;
+    box-shadow:0 8px 28px rgba(47,93,184,.13);
+    padding:26px 22px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+  }
+  .fc-face.back{
+    transform:rotateY(180deg);
+    justify-content:flex-start;
+    padding-top:34px;
+    overflow-y:auto;
+    align-items:stretch;
+  }
+  .fc-lesson{position:absolute;top:12px;left:16px;font-size:.75rem;font-weight:800;color:var(--blue);background:var(--blue-light);padding:3px 10px;border-radius:999px}
+  .fc-cat{position:absolute;top:12px;right:16px;font-size:.75rem;color:var(--muted)}
+  .fc-fr{
+    font-size:2rem;font-weight:900;color:var(--blue-dark);
+    line-height:1.25;margin:10px 0 6px;word-break:break-word;
+  }
+  .fc-pos{font-size:.85rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+  .fc-ipa{font-size:.9rem;color:#8a99b8;font-style:italic;margin-top:8px}
+  .fc-hint{position:absolute;bottom:14px;font-size:.8rem;color:var(--muted);opacity:.8;left:0;right:0;text-align:center}
+  .fc-face.back .fc-vi{font-size:1.5rem;font-weight:800;color:var(--ok);margin:6px 0 14px;line-height:1.4;text-align:center}
+  .fc-ex{margin-top:10px;background:var(--blue-light);border-radius:12px;padding:12px 14px;text-align:left;width:100%;border-left:4px solid #a9c8f5}
+  .fc-ex .fr-ex{font-weight:700;color:var(--blue-dark);margin-bottom:4px}
+  .fc-ex .vi-ex{font-size:.9rem;color:#3d4f6e}
+  .fc-controls{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;
+  }
+  .fc-controls .btn{min-width:100px;justify-content:center;display:inline-flex;align-items:center}
+  .fc-progress{max-width:640px;margin:0 auto 14px}
+  .fc-counter{display:flex;justify-content:space-between;font-size:.88rem;font-weight:700;color:var(--muted);margin-bottom:4px}
+  .fc-flag-row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  .fc-flag{
+    font:inherit;font-size:.85rem;font-weight:700;padding:8px 14px;border-radius:12px;
+    border:2px solid var(--border);background:#fff;color:var(--blue-dark);cursor:pointer;
+    min-height:40px;transition:.15s
+  }
+  .fc-flag:hover{background:var(--blue-light)}
+  .fc-flag.on-ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+  .fc-flag.on-warn{background:var(--warn-bg);border-color:var(--warn);color:var(--warn)}
+  .fc-finished{text-align:center;padding:30px 18px}
+  .fc-finished .big{font-size:2.4rem;font-weight:900;color:var(--blue-dark);margin-bottom:6px}
+  .fc-keyboard{margin-top:10px;text-align:center;font-size:.8rem;color:var(--muted)}
+  .fc-keyboard kbd{
+    background:#eef4fd;border:1px solid #d5e5fb;border-bottom-width:2px;
+    border-radius:6px;padding:1px 6px;font-size:.78rem;font-family:ui-monospace,monospace;color:var(--blue-dark)
+  }
   @media (max-width:560px){
     body{font-size:15px}
     nav button{font-size:.82rem;padding:7px 11px}
     main{padding:12px 10px 60px}
     .qprompt{font-size:1.03rem}
     .opt{font-size:.95rem;padding:11px 12px}
+    .flashcard{min-height:300px}
+    .fc-fr{font-size:1.55rem}
+    .fc-face.back .fc-vi{font-size:1.2rem}
+    .fc-controls .btn{min-width:80px;font-size:.85rem;padding:9px 12px}
   }
 </style>
 </head>
@@ -171,6 +239,7 @@
   <nav id="mainnav" aria-label="Điều hướng chính">
     <button data-view="home" class="active">Trang chủ</button>
     <button data-view="lessons">Bài học từ vựng</button>
+    <button data-view="flashcards">Flashcards</button>
     <button data-view="meaning">Bài tập chọn nghĩa</button>
     <button data-view="context">Bài tập theo ngữ cảnh</button>
     <button data-view="review">Ôn tập từ sai</button>
@@ -194,6 +263,7 @@
       <h2>Bắt đầu nhanh</h2>
       <div class="row">
         <button class="btn primary" data-goto="lessons">📚 Học từ vựng</button>
+        <button class="btn" data-goto="flashcards">🎴 Flashcards</button>
         <button class="btn" data-goto="meaning">🅰️ Bài tập chọn nghĩa</button>
         <button class="btn" data-goto="context">✏️ Bài tập theo ngữ cảnh</button>
         <button class="btn" data-goto="review">🔁 Ôn tập từ sai</button>
@@ -231,6 +301,37 @@
       <p class="muted" id="vocabCount" style="margin-top:10px"></p>
     </div>
     <div id="vocabList" class="vocab-list"></div>
+  </section>
+
+  <!-- ============ FLASHCARDS ============ -->
+  <section id="view-flashcards" class="view">
+    <div class="card">
+      <h1>🎴 Flashcards – Luyện nhớ từ vựng</h1>
+      <p class="muted">Nhấn vào thẻ (hoặc nhấn <strong>Space / Enter</strong> khi thẻ đang được chọn) để lật xem nghĩa. Dùng phím <strong>← →</strong> để chuyển thẻ trước / sau.</p>
+      <div class="row" style="margin-top:10px">
+        <label class="field">Bài học
+          <select id="fcLesson">
+            <option value="all">Tất cả (Leçons 7–12)</option>
+          </select>
+        </label>
+        <label class="field">Lọc thẻ
+          <select id="fcFilter">
+            <option value="all">Tất cả thẻ</option>
+            <option value="new">Chưa học</option>
+            <option value="learned">Đã học</option>
+            <option value="review">Cần ôn lại</option>
+          </select>
+        </label>
+        <label class="field">Thứ tự
+          <select id="fcOrder">
+            <option value="seq">Theo bài học</option>
+            <option value="shuffle">Trộn ngẫu nhiên</option>
+          </select>
+        </label>
+        <button class="btn primary" id="fcStart" style="align-self:flex-end">Bắt đầu</button>
+      </div>
+    </div>
+    <div id="fcStage"></div>
   </section>
 
   <!-- ============ MEANING QUIZ ============ -->
@@ -351,10 +452,6 @@ const LESSONS = [
   {id:"l11", num:11, title:"Les voyages",       vi:"Du lịch"},
   {id:"l12", num:12, title:"Marseille",         vi:"Marseille"}
 ];
-
-/* Mỗi mục từ vựng:
-   [0] tiếng Pháp  [1] nghĩa tiếng Việt  [2] từ loại  [3] chủ đề
-   [4] phiên âm IPA  [5] câu ví dụ tiếng Pháp  [6] giải thích tiếng Việt */
 
 const RAW_VOCAB = {
 
@@ -588,9 +685,6 @@ l12:[
 ]
 };
 
-/* ---------------- BÀI TẬP THEO NGỮ CẢNH ----------------
-   [0] câu có chỗ trống  [1] bốn lựa chọn  [2] đáp án đúng  [3] giải thích */
-
 const RAW_CTX = {
 
 l7:[
@@ -799,7 +893,6 @@ let CTXQ = [];
   });
 })();
 
-/* ---- PRNG tất định ---- */
 function hashStr(s){
   let h = 2166136261;
   for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
@@ -821,7 +914,6 @@ function shuffleArr(arr){
   return arr;
 }
 
-/* ---- Sinh câu hỏi chọn nghĩa từ kho từ vựng ---- */
 function addDistinct(pool, rnd, out, used, need){
   const copy = pool.slice();
   for(let i=copy.length-1;i>0;i--){
@@ -865,7 +957,7 @@ let MEANQ = [];
 const ALLQ = MEANQ.concat(CTXQ);
 
 /* ============================================================
-   3. LƯU TIẾN ĐỘ (localStorage)
+   3. LƯU TIẾN ĐỘ
    ============================================================ */
 
 const STORE_KEY = "frenchA1_taxi_progress_v1";
@@ -879,7 +971,8 @@ function defaultProgress(){
     units: units,
     mistakes:{},
     exercises:0,
-    lastStudy:null
+    lastStudy:null,
+    flashcardSessions: 0
   };
 }
 
@@ -896,6 +989,7 @@ function loadProgress(){
     base.needReview = saved.needReview || {};
     base.mistakes = saved.mistakes || {};
     base.exercises = saved.exercises || 0;
+    base.flashcardSessions = saved.flashcardSessions || 0;
     base.lastStudy = saved.lastStudy || null;
     if(saved.stats){
       base.stats.meaning = saved.stats.meaning || {a:0,c:0};
@@ -952,6 +1046,7 @@ function showView(name){
   window.scrollTo({top:0, behavior:"smooth"});
   if(name === "home") renderHome();
   if(name === "lessons") renderVocab();
+  if(name === "flashcards") initFlashcardsView();
   if(name === "review") renderReview();
   if(name === "progress") renderProgress();
 }
@@ -998,6 +1093,7 @@ function renderHome(){
       '<div class="ls">Đã học: ' + learned + '/' + items.length + ' (' + p + '%) · ' + acc + '</div>' +
       '<div class="row" style="margin-top:8px">' +
         '<button class="btn small" data-goto="lessons" data-lesson="' + l.id + '">Học từ vựng</button>' +
+        '<button class="btn small" data-goto="flashcards" data-fc="' + l.id + '">🎴 Flashcards</button>' +
       '</div>' +
     '</div>';
   }).join("");
@@ -1007,6 +1103,13 @@ function renderHome(){
       document.getElementById("vocabLesson").value = btn.dataset.lesson;
       vocabFilter.lesson = btn.dataset.lesson;
       showView("lessons");
+    });
+  });
+  lg.querySelectorAll("[data-fc]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.getElementById("fcLesson").value = btn.dataset.fc;
+      showView("flashcards");
+      startFlashcards();
     });
   });
 }
@@ -1037,7 +1140,6 @@ const vocabFilter = {lesson:"all", status:"all", search:""};
   const search = document.getElementById("vocabSearch");
   search.addEventListener("input", ()=>{ vocabFilter.search = search.value.trim().toLowerCase(); renderVocab(); });
 
-  // scope selects for quizzes
   ["mScope","cScope"].forEach(id=>{
     const s = document.getElementById(id);
     const o0 = document.createElement("option");
@@ -1051,7 +1153,14 @@ const vocabFilter = {lesson:"all", status:"all", search:""};
     });
   });
 
-  // reset unit select
+  const fcl = document.getElementById("fcLesson");
+  LESSONS.forEach(l=>{
+    const o = document.createElement("option");
+    o.value = l.id;
+    o.textContent = "Leçon " + l.num + " – " + l.title;
+    fcl.appendChild(o);
+  });
+
   const rs = document.getElementById("resetUnit");
   LESSONS.forEach(l=>{
     const o = document.createElement("option");
@@ -1136,7 +1245,230 @@ function renderVocab(){
 }
 
 /* ============================================================
-   8. ĐỘNG CƠ BÀI TẬP
+   8. FLASHCARDS
+   ============================================================ */
+
+const FC = {
+  deck: [],
+  idx: 0,
+  flipped: false,
+  finished: false
+};
+
+function initFlashcardsView(){
+  const stage = document.getElementById("fcStage");
+  if(!FC.deck.length){
+    stage.innerHTML = '<div class="card"><div class="empty">Chọn bộ lọc phía trên và nhấn <strong>Bắt đầu</strong> để mở bộ thẻ.</div></div>';
+  }
+}
+
+function buildFlashDeck(){
+  const lesson = document.getElementById("fcLesson").value;
+  const filter = document.getElementById("fcFilter").value;
+  const order  = document.getElementById("fcOrder").value;
+
+  let pool = ALLVOCAB.filter(v=>{
+    if(lesson !== "all" && v.lesson !== lesson) return false;
+    if(filter === "new" && (P.learned[v.id] || P.needReview[v.id])) return false;
+    if(filter === "learned" && !P.learned[v.id]) return false;
+    if(filter === "review" && !P.needReview[v.id]) return false;
+    return true;
+  });
+  if(order === "shuffle") pool = shuffleArr(pool.slice());
+  else pool = pool.slice();
+  return pool;
+}
+
+function renderFlashcard(){
+  const stage = document.getElementById("fcStage");
+  if(!FC.deck.length){
+    stage.innerHTML = '<div class="card"><div class="empty">Không có thẻ nào phù hợp với bộ lọc hiện tại. Hãy thử đổi bộ lọc.</div></div>';
+    return;
+  }
+  if(FC.finished){
+    const learnedCount = FC.deck.filter(v=>P.learned[v.id]).length;
+    const needCount = FC.deck.filter(v=>P.needReview[v.id]).length;
+    stage.innerHTML =
+      '<div class="card fc-finished">' +
+        '<div class="big">🎉 Hoàn thành!</div>' +
+        '<p class="muted">Bạn đã xem hết ' + FC.deck.length + ' thẻ trong bộ này.</p>' +
+        '<div class="stats-grid" style="margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto">' +
+          '<div class="stat"><div class="num">' + learnedCount + '</div><div class="lbl">Đã đánh dấu học</div></div>' +
+          '<div class="stat"><div class="num">' + needCount + '</div><div class="lbl">Cần ôn lại</div></div>' +
+          '<div class="stat"><div class="num">' + (FC.deck.length - learnedCount - needCount) + '</div><div class="lbl">Chưa đánh dấu</div></div>' +
+        '</div>' +
+        '<div class="row" style="justify-content:center;margin-top:16px">' +
+          '<button class="btn primary" id="fcRestart">Làm lại bộ này</button>' +
+          '<button class="btn" id="fcBackStart">Về màn hình bắt đầu</button>' +
+        '</div>' +
+      '</div>';
+    document.getElementById("fcRestart").addEventListener("click", ()=>{ startFlashcards(); });
+    document.getElementById("fcBackStart").addEventListener("click", ()=>{
+      FC.deck = []; FC.idx = 0; FC.flipped = false; FC.finished = false;
+      initFlashcardsView();
+    });
+    return;
+  }
+
+  const v = FC.deck[FC.idx];
+  const learned = !!P.learned[v.id];
+  const need = !!P.needReview[v.id];
+
+  const html =
+    '<div class="fc-progress">' +
+      '<div class="fc-counter">' +
+        '<span>Thẻ ' + (FC.idx + 1) + ' / ' + FC.deck.length + '</span>' +
+        '<span>' + esc(lessonShort(v.lesson)) + ' · ' + esc(v.cat) + '</span>' +
+      '</div>' +
+      '<div class="bar"><i style="width:' + pct(FC.idx + 1, FC.deck.length) + '%"></i></div>' +
+    '</div>' +
+    '<div class="fc-wrap">' +
+      '<div class="flashcard' + (FC.flipped ? " flipped" : "") + '" id="fcCard" role="button" tabindex="0" aria-label="Nhấn để lật thẻ">' +
+        '<div class="fc-face front">' +
+          '<div class="fc-lesson">' + esc(lessonShort(v.lesson)) + '</div>' +
+          '<div class="fc-cat">' + esc(v.pos) + '</div>' +
+          '<div class="fc-fr">' + esc(v.fr) + '</div>' +
+          '<div class="fc-ipa">' + esc(v.ipa) + '</div>' +
+          '<div class="fc-hint">Nhấn hoặc Space để xem nghĩa</div>' +
+        '</div>' +
+        '<div class="fc-face back">' +
+          '<div class="fc-lesson">' + esc(lessonShort(v.lesson)) + '</div>' +
+          '<div class="fc-cat">' + esc(v.cat) + '</div>' +
+          '<div class="fc-vi">' + esc(v.vi) + '</div>' +
+          '<div class="fc-ex">' +
+            '<div class="fr-ex">« ' + esc(v.ex) + ' »</div>' +
+            '<div class="vi-ex">' + esc(v.exVi) + '</div>' +
+          '</div>' +
+          '<div class="fc-hint">Nhấn để xem lại mặt trước</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="fc-controls">' +
+        '<button class="btn" id="fcPrev" ' + (FC.idx === 0 ? "disabled" : "") + '>← Trước</button>' +
+        '<button class="btn" id="fcFlip">🔄 Lật thẻ</button>' +
+        '<button class="btn primary" id="fcNext">' + (FC.idx + 1 >= FC.deck.length ? "Hoàn thành" : "Sau →") + '</button>' +
+      '</div>' +
+      '<div class="fc-flag-row">' +
+        '<button class="btn fc-flag' + (learned ? " on-ok" : "") + '" id="fcLearned" aria-pressed="' + learned + '">' +
+          (learned ? "✓ Đã học" : "Đánh dấu đã học") + '</button>' +
+        '<button class="btn fc-flag' + (need ? " on-warn" : "") + '" id="fcNeed" aria-pressed="' + need + '">' +
+          (need ? "★ Cần ôn lại" : "Đánh dấu cần ôn lại") + '</button>' +
+      '</div>' +
+      '<div class="fc-keyboard">' +
+        '<kbd>Space</kbd> lật thẻ · <kbd>←</kbd> trước · <kbd>→</kbd> sau' +
+      '</div>' +
+    '</div>';
+
+  stage.innerHTML = html;
+
+  const card = document.getElementById("fcCard");
+  card.addEventListener("click", flipCard);
+
+  document.getElementById("fcFlip").addEventListener("click", flipCard);
+  document.getElementById("fcPrev").addEventListener("click", prevCard);
+  document.getElementById("fcNext").addEventListener("click", nextCard);
+  document.getElementById("fcLearned").addEventListener("click", toggleLearned);
+  document.getElementById("fcNeed").addEventListener("click", toggleNeed);
+
+  P.viewed[v.id] = true;
+  saveProgress();
+
+  setTimeout(()=>{ const c = document.getElementById("fcCard"); if(c) c.focus({preventScroll:true}); }, 30);
+}
+
+function flipCard(){
+  FC.flipped = !FC.flipped;
+  const c = document.getElementById("fcCard");
+  if(c) c.classList.toggle("flipped", FC.flipped);
+}
+
+function prevCard(){
+  if(FC.idx > 0){ FC.idx--; FC.flipped = false; renderFlashcard(); }
+}
+
+function nextCard(){
+  if(FC.idx + 1 >= FC.deck.length){
+    P.flashcardSessions = (P.flashcardSessions || 0) + 1;
+    saveProgress();
+    FC.finished = true;
+    renderFlashcard();
+    return;
+  }
+  FC.idx++;
+  FC.flipped = false;
+  renderFlashcard();
+}
+
+function toggleLearned(){
+  const v = FC.deck[FC.idx];
+  if(!v) return;
+  if(P.learned[v.id]){
+    delete P.learned[v.id];
+  } else {
+    P.learned[v.id] = true;
+    delete P.needReview[v.id];
+  }
+  saveProgress();
+  renderFlashcard();
+}
+
+function toggleNeed(){
+  const v = FC.deck[FC.idx];
+  if(!v) return;
+  if(P.needReview[v.id]){
+    delete P.needReview[v.id];
+  } else {
+    P.needReview[v.id] = true;
+    delete P.learned[v.id];
+  }
+  saveProgress();
+  renderFlashcard();
+}
+
+function startFlashcards(){
+  const deck = buildFlashDeck();
+  if(deck.length === 0){
+    document.getElementById("fcStage").innerHTML =
+      '<div class="card"><div class="empty">Không có thẻ nào phù hợp với bộ lọc hiện tại. Hãy thử đổi bộ lọc hoặc chọn “Tất cả thẻ”.</div></div>';
+    return;
+  }
+  FC.deck = deck;
+  FC.idx = 0;
+  FC.flipped = false;
+  FC.finished = false;
+  renderFlashcard();
+}
+
+document.getElementById("fcStart").addEventListener("click", ()=>{
+  startFlashcards();
+  const s = document.getElementById("fcStage");
+  if(s) s.scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+/* Bàn phím toàn cục cho flashcards - CHỈ một handler duy nhất để tránh double-fire */
+document.addEventListener("keydown", e=>{
+  const view = document.getElementById("view-flashcards");
+  if(!view || !view.classList.contains("active")) return;
+  if(!FC.deck.length || FC.finished) return;
+
+  const tag = (e.target.tagName || "").toLowerCase();
+  if(tag === "input" || tag === "select" || tag === "textarea") return;
+
+  if(e.key === "ArrowLeft"){
+    e.preventDefault();
+    prevCard();
+  } else if(e.key === "ArrowRight"){
+    e.preventDefault();
+    nextCard();
+  } else if(e.key === " " || e.key === "Enter"){
+    if(e.target.id === "fcCard"){
+      e.preventDefault();
+      flipCard();
+    }
+  }
+});
+
+/* ============================================================
+   9. ĐỘNG CƠ BÀI TẬP
    ============================================================ */
 
 function prepQ(q){
@@ -1153,13 +1485,14 @@ function newSession(cfg){
   return {
     containerId: cfg.containerId,
     title: cfg.title,
-    mode: cfg.mode,          // "practice" | "test"
+    mode: cfg.mode,
     backView: cfg.backView,
     questions: prepared,
     idx: 0,
     answers: [],
     finished: false,
-    answered: false
+    answered: false,
+    replayCfg: cfg
   };
 }
 
@@ -1200,8 +1533,7 @@ function renderSession(containerId){
   box.querySelectorAll(".opt").forEach(btn=>{
     btn.addEventListener("click", ()=> answerSession(containerId, parseInt(btn.dataset.i,10)));
   });
-  const nextBtn = document.getElementById(containerId + "-next");
-  nextBtn.addEventListener("click", ()=> nextQuestion(containerId));
+  document.getElementById(containerId + "-next").addEventListener("click", ()=> nextQuestion(containerId));
   document.getElementById(containerId + "-quit").addEventListener("click", ()=>{
     if(confirm("Bạn muốn kết thúc bài tập này?")){
       s.finished = true;
@@ -1219,12 +1551,12 @@ function formatPrompt(r){
 
 function answerSession(containerId, choice){
   const s = sessions[containerId];
-  if(!s || s.answered) return;
+  if(!s || s.answered || s.finished) return;
   s.answered = true;
   const q = s.questions[s.idx];
   const r = q.ref;
   const ok = (choice === q.correctIndex);
-  s.answers.push({ref:r, chosen:s.q.options ? null : q.options[choice], ok:ok});
+  s.answers.push({ref:r, chosen:q.options[choice], ok:ok});
 
   recordAnswer(r, ok);
 
@@ -1254,6 +1586,7 @@ function answerSession(containerId, choice){
 function nextQuestion(containerId){
   const s = sessions[containerId];
   if(!s) return;
+  if(s.finished) return;   // chặn timeout chạy lại sau khi đã kết thúc / thoát
   s.idx++;
   s.answered = false;
   if(s.idx >= s.questions.length){
@@ -1318,7 +1651,6 @@ function renderSessionResult(containerId){
   });
 }
 
-/* ---- Ghi nhận kết quả ---- */
 function recordAnswer(r, ok){
   const st = P.stats[r.type] || P.stats.meaning;
   st.a++; if(ok) st.c++;
@@ -1346,7 +1678,6 @@ function recordAnswer(r, ok){
   saveProgress();
 }
 
-/* ---- Khởi động bài tập chọn nghĩa ---- */
 document.getElementById("mStart").addEventListener("click", ()=>{
   const scope = document.getElementById("mScope").value;
   const count = parseInt(document.getElementById("mCount").value, 10);
@@ -1359,11 +1690,9 @@ document.getElementById("mStart").addEventListener("click", ()=>{
     backView: "meaning"
   };
   startSession("mQuiz", cfg);
-  sessions["mQuiz"].replayCfg = cfg;
   document.getElementById("mQuiz").scrollIntoView({behavior:"smooth", block:"start"});
 });
 
-/* ---- Khởi động bài tập ngữ cảnh ---- */
 document.getElementById("cStart").addEventListener("click", ()=>{
   const scope = document.getElementById("cScope").value;
   const count = parseInt(document.getElementById("cCount").value, 10);
@@ -1376,12 +1705,11 @@ document.getElementById("cStart").addEventListener("click", ()=>{
     backView: "context"
   };
   startSession("cQuiz", cfg);
-  sessions["cQuiz"].replayCfg = cfg;
   document.getElementById("cQuiz").scrollIntoView({behavior:"smooth", block:"start"});
 });
 
 /* ============================================================
-   9. ÔN TẬP
+   10. ÔN TẬP
    ============================================================ */
 
 let reviewTab = "learned";
@@ -1408,7 +1736,7 @@ function renderWordList(body, kind){
   if(items.length === 0){
     body.innerHTML = '<div class="empty">' +
       (kind === "learned"
-        ? 'Bạn chưa đánh dấu từ nào là “Đã học”. Hãy vào phần Bài học từ vựng và đánh dấu nhé.'
+        ? 'Bạn chưa đánh dấu từ nào là “Đã học”. Hãy vào phần Bài học từ vựng hoặc Flashcards và đánh dấu nhé.'
         : 'Chưa có từ nào trong danh sách “Cần ôn lại”.') +
       '</div>';
     return;
@@ -1478,7 +1806,6 @@ function renderWrongList(body){
     holder.id = "wrongQuiz";
     body.insertBefore(holder, body.firstChild);
     startSession("wrongQuiz", cfg);
-    sessions["wrongQuiz"].replayCfg = cfg;
     holder.scrollIntoView({behavior:"smooth", block:"start"});
   });
 
@@ -1505,7 +1832,6 @@ function renderWrongList(body){
       };
       const holderId = "retryBox-" + m.id;
       startSession(holderId, cfg);
-      sessions[holderId].replayCfg = cfg;
     });
   });
 }
@@ -1537,12 +1863,11 @@ function renderRandom(body){
     if(t === "context") pool = CTXQ;
     const cfg = { pool: pool, count: n, mode: "practice", title: "Ôn tập ngẫu nhiên", backView: "review" };
     startSession("rndQuiz", cfg);
-    sessions["rndQuiz"].replayCfg = cfg;
   });
 }
 
 /* ============================================================
-   10. TIẾN ĐỘ
+   11. TIẾN ĐỘ
    ============================================================ */
 
 function renderProgress(){
@@ -1557,19 +1882,21 @@ function renderProgress(){
     statBox(P.stats.meaning.a ? pct(P.stats.meaning.c,P.stats.meaning.a) + "%" : "—", "Đúng – chọn nghĩa") +
     statBox(P.stats.context.a ? pct(P.stats.context.c,P.stats.context.a) + "%" : "—", "Đúng – ngữ cảnh") +
     statBox(Object.keys(P.mistakes).length, "Câu đang sai") +
+    statBox(P.flashcardSessions || 0, "Lượt flashcards") +
     statBox(P.lastStudy ? new Date(P.lastStudy).toLocaleDateString("vi-VN") : "—", "Ngày học gần nhất");
 
   const up = document.getElementById("unitProgress");
   up.innerHTML = LESSONS.map(l=>{
     const items = VOCAB[l.id];
     const learned = items.filter(v=>P.learned[v.id]).length;
+    const need = items.filter(v=>P.needReview[v.id]).length;
     const u = P.units[l.id];
     const acc = u.a ? pct(u.c,u.a) : 0;
     return '<div style="margin-bottom:16px">' +
       '<div class="kv"><span>Leçon ' + l.num + ' – ' + esc(l.title) + '</span>' +
         '<span>' + learned + '/' + items.length + ' từ · ' + u.a + ' câu · ' + acc + '% đúng</span></div>' +
       '<div class="bar"><i style="width:' + pct(learned, items.length) + '%"></i></div>' +
-      '<div class="muted" style="font-size:.82rem">Từ đã học: ' + pct(learned, items.length) + '% · Độ chính xác bài tập: ' + acc + '%</div>' +
+      '<div class="muted" style="font-size:.82rem">Từ đã học: ' + pct(learned, items.length) + '% · Cần ôn: ' + need + ' · Độ chính xác bài tập: ' + acc + '%</div>' +
       '</div>';
   }).join("");
 
@@ -1607,11 +1934,13 @@ document.getElementById("resetAllBtn").addEventListener("click", ()=>{
   saveProgress();
   renderProgress();
   renderHome();
+  FC.deck = []; FC.idx = 0; FC.flipped = false; FC.finished = false;
+  initFlashcardsView();
   alert("Đã xoá toàn bộ tiến độ.");
 });
 
 /* ============================================================
-   11. KHỞI ĐỘNG
+   12. KHỞI ĐỘNG
    ============================================================ */
 
 (function init(){
@@ -1619,6 +1948,7 @@ document.getElementById("resetAllBtn").addEventListener("click", ()=>{
   renderHome();
   renderVocab();
   renderProgress();
+  initFlashcardsView();
 })();
 </script>
 </body>
